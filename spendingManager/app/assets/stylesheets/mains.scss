@@ -1,3 +1,41 @@
 // Place all the styles related to the Mains controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#main-title {
+  text-align: center;
+  margin: 400px 0 auto;
+  color: #F4D00C;
+  font: italic bold 800% sans-serif;
+}
+#sign-up {
+  position: relative;
+  left: 42%;
+  top: 50px;
+  
+  padding: 5px 10px 10px 10px;
+  text-align: center;
+  border: 8px solid #1E90FF;
+  background-color: #3399FF;
+
+  font: bold 30px sans-serif;
+  color: #FFFFFF;
+}
+#sign-up:hover {
+  color: #F4D00C;
+}
+#log-in {
+  position: relative;
+  left: 44%;
+  top: 50px;
+  
+  padding: 5px 10px 10px 10px;
+  text-align: center;
+  border: 8px solid #1E90FF;
+  background-color: #3399FF;
+
+  font: bold 30px sans-serif;
+  color: #FFFFFF;
+}
+#log-in:hover {
+  color: #F4D00C;
+}
