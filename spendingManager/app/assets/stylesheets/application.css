@@ -21,5 +21,6 @@
 body {
   background-color: #006495;
 }
-.field label {
+.application-name {
+  font-style: italic;
 }

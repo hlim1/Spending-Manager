@@ -3,18 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #main-title {
   text-align: center;
-  margin: 400px 0 auto;
+  margin: 15% 0 auto;
   color: #F4D00C;
   font: italic bold 800% sans-serif;
 }
-#sign-up {
-  position: relative;
-  left: 42%;
-  top: 50px;
-  
-  padding: 5px 10px 10px 10px;
+.centering {
+  display: block;
+  margin: 2em;
   text-align: center;
+}
+#sign-up {
+  padding: 5px 10px 10px 10px;
   border: 8px solid #1E90FF;
+  margin-right: 12px;
   background-color: #3399FF;
 
   font: bold 30px sans-serif;
@@ -24,13 +25,9 @@
   color: #F4D00C;
 }
 #log-in {
-  position: relative;
-  left: 44%;
-  top: 50px;
-  
   padding: 5px 10px 10px 10px;
-  text-align: center;
   border: 8px solid #1E90FF;
+  margin-left: 12px;
   background-color: #3399FF;
 
   font: bold 30px sans-serif;

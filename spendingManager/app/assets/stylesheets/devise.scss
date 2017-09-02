@@ -1,11 +1,16 @@
-.field {
+#registration{
+  border: solid;
+  padding: 80px 0;
+  text-align: center;
+  
 }
 .field label {
-  font-size: bold 14px sans-serif;
+  font: bold 20px sans-serif;
   margin: 20px 0 auto;
 }
 .field input {
-  margin: 10px auto;
+  margin: 10px 0 auto;
 }
 #password-rule {
+  font-size: 12px;
 }
