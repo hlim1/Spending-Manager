@@ -19,7 +19,8 @@
   font-size: 20px;
 }
 body {
-  background-color: #006495;
+  background-color: #333333;
+  color: #FFFFFF;
 }
 .application-name {
   font-style: italic;

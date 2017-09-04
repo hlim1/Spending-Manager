@@ -1,8 +1,14 @@
-#registration{
+#registration {
+  position: absolute;
   border: solid;
-  padding: 80px 0;
-  text-align: center;
-  
+  padding: 2em;
+  width: 20em;
+  left: 32%; 
+
+  background-color: #222222;
+}
+#signup-title {
+  border: solid 1px;
 }
 .field label {
   font: bold 20px sans-serif;
