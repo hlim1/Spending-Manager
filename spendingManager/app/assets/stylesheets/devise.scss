@@ -1,14 +1,58 @@
+// id styles
 #registration {
   position: absolute;
-  border: solid;
-  padding: 2em;
-  width: 20em;
-  left: 32%; 
+  height: 31em;
+  width: 25em;
+  left: 35%;
+  top: 10%; 
+  border-radius: 15px 15px 15px 15px;
 
   background-color: #222222;
 }
-#signup-title {
-  border: solid 1px;
+#login {
+  position: absolute;
+  height: 20em;
+  width: 25em;
+  left: 35%;
+  top: 10%; 
+  border-radius: 15px 15px 15px 15px;
+
+  background-color: #222222;
+}
+#forgot-password {
+  position: absolute;
+  height: 20em;
+  width: 25em;
+  left: 35%;
+  top: 10%; 
+  border-radius: 15px 15px 15px 15px;
+
+  background-color: #222222;
+}
+#password-rule {
+  font-size: 12px;
+}
+#splitter {
+  text-align: center;
+  color: #555555;
+}
+#already-member {
+  text-align: center;
+  line-height: 150%;
+  color: #FFFFFF;
+}
+#not-member {
+  line-height: 150%;
+  color: #FFFFFF; 
+}
+
+// class styles
+.title-bar {
+  text-align: center;
+  height: 2em;
+  padding-top: 15px;
+  border-radius: 15px 15px 0 0;
+  background-color: #444444;
 }
 .field label {
   font: bold 20px sans-serif;
@@ -17,6 +61,21 @@
 .field input {
   margin: 10px 0 auto;
 }
-#password-rule {
-  font-size: 12px;
+.sign-info {
+  margin-left: 80px;
+}
+.submit-btn {
+  background-color: #006699;
+  width: 4.5em;
+  height: 1.5em;
+}
+.send-me-btn {
+  background-color: #006699;
+  width: 17em;
+  height: 2.5em;
+  font-size: 15px;
+}
+.links:hover {
+  color: #FFFFFF;
+  background-color: transparent;
 }
