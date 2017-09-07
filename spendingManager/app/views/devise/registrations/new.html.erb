@@ -26,7 +26,7 @@
         <%= f.label :password %>
         <%= f.password_field :password, autocomplete: "off", placeholder: "Password" %><br/>
         <% if @minimum_password_length %>
-          <em id="password-rule">(<%= @minimum_password_length %> characters minimum)</em>
+          <em class="password-rule">(<%= @minimum_password_length %> characters minimum)</em>
         <% end %>
       </div>
 

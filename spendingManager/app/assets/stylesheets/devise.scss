@@ -4,7 +4,7 @@
   height: 31em;
   width: 25em;
   left: 35%;
-  top: 10%; 
+  top: 10%;
   border-radius: 15px 15px 15px 15px;
 
   background-color: #222222;
@@ -19,6 +19,17 @@
 
   background-color: #222222;
 }
+#view-profile {
+  position: absolute;
+  height: 41em;
+  width: 30em;
+  left: 33%;
+  top: 10%; 
+  margin-bottom: 3%;
+  border-radius: 15px 15px 15px 15px;
+
+  background-color: #222222;
+}
 #forgot-password {
   position: absolute;
   height: 20em;
@@ -28,9 +39,6 @@
   border-radius: 15px 15px 15px 15px;
 
   background-color: #222222;
-}
-#password-rule {
-  font-size: 12px;
 }
 #splitter {
   text-align: center;
@@ -45,14 +53,24 @@
   line-height: 150%;
   color: #FFFFFF; 
 }
-
-// class styles
+#delete-account {
+  height: 130px;
+  padding-top: 10px;
+  padding-left: 80px;
+  line-height: 200%;
+  background-color: #444444;
+  border-radius: 0 0 15px 15px;
+}
+// class styles------------------------------------------------
 .title-bar {
   text-align: center;
   height: 2em;
   padding-top: 15px;
   border-radius: 15px 15px 0 0;
   background-color: #444444;
+}
+.password-rule {
+  font-size: 12px;
 }
 .field label {
   font: bold 20px sans-serif;
