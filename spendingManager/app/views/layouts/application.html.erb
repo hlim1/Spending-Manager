@@ -20,7 +20,7 @@
     <div id="user_nav">
       <% if user_signed_in? %>
         Signed in as <%= current_user.firstname %>. Not you?
-        <%= link_to "Log out", destroy_user_session_path, method: :delet %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
       <% end %>
     </div>
 
