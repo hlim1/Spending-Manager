@@ -19,11 +19,8 @@
     <p class="alert"><%= alert %></p>
     <div id="user_nav">
       <% if user_signed_in? %>
-        Signed in as <%= current_user.email %>. Not you?
+        Signed in as <%= current_user.firstname %>. Not you?
         <%= link_to "Log out", destroy_user_session_path, method: :delet %>
-      <% else %>
-        <%= link_to "Sign up", new_user_registration_path %> or
-        <%= link_to "Log in", new_user_session_path %>
       <% end %>
     </div>
 
