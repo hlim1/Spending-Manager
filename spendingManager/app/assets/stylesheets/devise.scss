@@ -49,17 +49,17 @@
   line-height: 150%;
   color: #FFFFFF;
 }
-#not-member {
-  line-height: 150%;
-  color: #FFFFFF; 
-}
+
 #delete-account {
-  height: 130px;
+  height: 140px;
   padding-top: 10px;
   padding-left: 80px;
   line-height: 200%;
   background-color: #444444;
   border-radius: 0 0 15px 15px;
+}
+#actions {
+  line-height: 50px;
 }
 // class styles------------------------------------------------
 .title-bar {
@@ -93,7 +93,16 @@
   height: 2.5em;
   font-size: 15px;
 }
-.links:hover {
+.links {
   color: #FFFFFF;
+}
+.links:hover {
   background-color: transparent;
+}
+.links:visited {
+  color: #FFFFFF;
+}
+.not-member {
+  line-height: 150%;
+  color: #FFFFFF; 
 }
