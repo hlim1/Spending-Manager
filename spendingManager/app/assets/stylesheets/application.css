@@ -25,3 +25,20 @@ body {
 .application-name {
   font-style: italic;
 }
+
+#side-menu {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+
+  padding-top: 60px;
+  padding-left: 30px;
+
+  line-height: 50px;
+}
