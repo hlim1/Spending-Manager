@@ -1,0 +1,16 @@
+// Place all the styles related to the Accounts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#new-account {
+  position: absolute;
+  height: 20em;
+  width: 25em;
+  left: 35%;
+  top: 10%;
+  border-radius: 15px 15px 15px 15px;
+
+  background-color: #222222;
+}
+#form-body {
+  margin-left: 80px;
+}

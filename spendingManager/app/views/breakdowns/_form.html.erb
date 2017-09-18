@@ -1,0 +1,42 @@
+<%= form_with(model: breakdown, local: true) do |form| %>
+  <% if breakdown.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(breakdown.errors.count, "error") %> prohibited this breakdown from being saved:</h2>
+
+      <ul>
+      <% breakdown.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date, id: :breakdown_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_field :content, id: :breakdown_content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.text_field :amount, id: :breakdown_amount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :currentBalance %>
+    <%= form.text_field :currentBalance, id: :breakdown_currentBalance %>
+  </div>
+
+  <div class="field">
+    <%= form.label :account %>
+    <%= form.text_field :account, id: :breakdown_account %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
