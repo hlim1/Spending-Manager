@@ -1,5 +1,6 @@
 class BreakdownsController < ApplicationController
   before_action :set_breakdown, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /breakdowns
   # GET /breakdowns.json

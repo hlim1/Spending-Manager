@@ -5,6 +5,13 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# gems for beter debugging in a development mode
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+# The better_errors gem improves the error messages when the program crashes. - Tyson Henry -
+gem 'better_errors', group: :development
+# The binding_of_caller gem allows you to print variables when the program crashes (just like when using gdb to debug C++ programs). - Tyson Henry -
+gem 'binding_of_caller', group: :development
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
 # Use sqlite3 as the database for Active Record

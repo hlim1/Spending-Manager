@@ -1,10 +1,14 @@
-<div id="new-account">
+<div class="add-edit-account">
   <div class="title-bar">
     <h1>New Account</h1>
   </div>
 
-  <div id="form-body">
+  <div class="form-body">
     <%= render 'form', account: @account %>
   </div>
+
+  <div class="return-link">
+    <%= link_to 'Detail', accounts_path %> |
+    <%= link_to 'Back', request.referer.present? ? request.referer : default_path %>
+  </div>
 </div>
-  <%= link_to 'Back', accounts_path %>

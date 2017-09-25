@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 20170918062050) do
   end
 
   create_table "summaries", force: :cascade do |t|
-    t.integer "bank_id"
+    t.integer "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["bank_id"], name: "index_summaries_on_bank_id"
+    t.index ["account_id"], name: "index_summaries_on_account_id"
   end
 
   create_table "users", force: :cascade do |t|
