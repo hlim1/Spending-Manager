@@ -26,16 +26,9 @@ class BreakdownsController < ApplicationController
   # POST /breakdowns.json
   def create
     @breakdown = Breakdown.new(breakdown_params)
+    @breakdown.account_id = params[:account_id]
 
-    respond_to do |format|
-      if @breakdown.save
-        format.html { redirect_to @breakdown, notice: 'Breakdown was successfully created.' }
-        format.json { render :show, status: :created, location: @breakdown }
-      else
-        format.html { render :new }
-        format.json { render json: @breakdown.errors, status: :unprocessable_entity }
-      end
-    end
+    
   end
 
   # PATCH/PUT /breakdowns/1
