@@ -20,6 +20,12 @@
     <%= @account.accountNumber %>
   </p>
 
+  <% @account.breakdowns.each do |breakdown| %>
+    <%= breakdown.date %>
+    <%= breakdown.content %>
+    <%= breakdown.amount %>
+  <% end %>
+
   <%= render 'breakdowns/form' %>
 
   <%= link_to 'Edit', edit_account_path(@account) %> |

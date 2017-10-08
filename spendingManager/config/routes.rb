@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :summaries
 
   resources :accounts do
-    resources :breakdowns
+    resources :breakdowns, shallow: true
   end
 
   devise_for :users

@@ -8,8 +8,6 @@
       <th>Date</th>
       <th>Content</th>
       <th>Amount</th>
-      <th>Currentbalance</th>
-      <th>Account</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,8 +18,6 @@
         <td><%= breakdown.date %></td>
         <td><%= breakdown.content %></td>
         <td><%= breakdown.amount %></td>
-        <td><%= breakdown.currentBalance %></td>
-        <td><%= breakdown.account %></td>
         <td><%= link_to 'Show', breakdown %></td>
         <td><%= link_to 'Edit', edit_breakdown_path(breakdown) %></td>
         <td><%= link_to 'Destroy', breakdown, method: :delete, data: { confirm: 'Are you sure?' } %></td>

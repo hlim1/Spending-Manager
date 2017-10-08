@@ -1,4 +1,4 @@
-<%= form_with(model: [@account, @breakdown], local: true) do |form| %>
+<%= form_with(model: [@account, Breakdown.new]) do |form| %>
   <% if @breakdown.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@breakdown.errors.count, "error") %> prohibited this breakdown from being saved:</h2>
@@ -24,16 +24,6 @@
   <div class="field">
     <%= form.label :amount %>
     <%= form.text_field :amount, id: :breakdown_amount %>
-  </div>
-
-  <div class="field">
-    <%= form.label :currentBalance %>
-    <%= form.text_field :currentBalance, id: :breakdown_currentBalance %>
-  </div>
-
-  <div class="field">
-    <%= form.label :account %>
-    <%= form.text_field :account, id: :breakdown_account %>
   </div>
 
   <div class="actions">

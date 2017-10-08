@@ -27,8 +27,11 @@ class BreakdownsController < ApplicationController
   def create
     @breakdown = Breakdown.new(breakdown_params)
     @breakdown.account_id = params[:account_id]
-
-    
+    if @breakdown.save
+      redirect_to @breakdown.account
+    else
+      render :new
+    end
   end
 
   # PATCH/PUT /breakdowns/1
@@ -63,6 +66,6 @@ class BreakdownsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def breakdown_params
-      params.require(:breakdown).permit(:date, :content, :amount, :currentBalance, :account)
+      params.require(:breakdown).permit(:date, :content, :amount, :account)
     end
 end
