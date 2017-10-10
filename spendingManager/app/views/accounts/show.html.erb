@@ -10,22 +10,45 @@
 </div>
 
 <div class="accounts">
-  <p>
-    <strong>Financial Institution:</strong>
-    <%= @account.name %>
-  </p>
+  <div id="account-name-section">
+    <h1 id="account-name"><%= @account.name %></h1>
+  </div>
 
-  <p>
-    <strong>Account Number:</strong>
-    <%= @account.accountNumber %>
-  </p>
-
-  <% @account.breakdowns.each do |breakdown| %>
-    <%= breakdown.date %>
-    <%= breakdown.content %>
-    <%= breakdown.amount %>
-    <br/>
-  <% end %>
+  <div id="account-info-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Account Number</th>
+          <th>Current Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <td><%= @account.accountNumber %></td>
+        <td><%= @account.balance %></td>
+      </tbody>
+    </table>
+  </div>
+  
+  <div id="account-ledger">
+    <table id="ledger-table">
+      <thead>
+        <tr>
+          <th style="width:7em">Date</th>
+          <th style="width:16em">Content</th>
+          <th>Debit / Credit</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @account.breakdowns.each do |breakdown| %>
+          <td class="ledger-data"><%= breakdown.date %></td>
+          <td class="ledger-data"><%= breakdown.content %></td>
+          <td class="ledger-data"><%= breakdown.activityType %></td>
+          <td class="ledger-data"><%= breakdown.amount %></td>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 
   <%= render 'breakdowns/form' %>
 

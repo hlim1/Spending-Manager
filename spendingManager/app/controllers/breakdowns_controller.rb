@@ -66,6 +66,6 @@ class BreakdownsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def breakdown_params
-      params.require(:breakdown).permit(:date, :content, :amount, :account)
+      params.require(:breakdown).permit(:date, :content, :activityType, :amount, :account)
     end
 end

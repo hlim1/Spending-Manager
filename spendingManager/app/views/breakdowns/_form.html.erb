@@ -22,6 +22,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :activityType %>
+    <%= form.select :activityType, options_for_select([['DEBIT', 'DEBIT'], ['CREDIT', 'CREDIT']]), id: :breakdown_content %>
+  </div>
+
+  <div class="field">
     <%= form.label :amount %>
     <%= form.text_field :amount, id: :breakdown_amount %>
   </div>
