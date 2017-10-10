@@ -21,6 +21,11 @@
     <%= form.text_field :accountNumber, id: :account_accountNumber, placeholder: "Last 4-digits. ex) 1234" %>
   </div>
 
+  <div class="field">
+    <%= form.label :balance %>
+    <%= form.text_field :balance, id: :balance, placeholder: "Current Balance" %>
+  </div>
+
   <div class="actions">
     <%= form.submit "Add", :class => "submit-btn" %>
   </div>

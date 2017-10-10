@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20170925015745) do
   create_table "accounts", force: :cascade do |t|
     t.string "name"
     t.string "accountNumber"
+    t.decimal "balance"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -25,7 +26,6 @@ ActiveRecord::Schema.define(version: 20170925015745) do
     t.date "date"
     t.string "content"
     t.decimal "amount"
-    t.decimal "currentBalance"
     t.integer "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

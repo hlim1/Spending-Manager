@@ -28,6 +28,16 @@ class AccountsController < ApplicationController
   def create
     @account = Account.new(account_params)
     @account.user = current_user;
+
+    respond_to do |format|
+      if @account.save
+        format.html { redirect_to @account, notice: 'Account was successfully created.' }
+        format.json { render :show, status: :created, location: @account }
+      else
+        format.html { render :new }
+        format.json { render json: @account.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /accounts/1
@@ -62,6 +72,6 @@ class AccountsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def account_params
-      params.require(:account).permit(:name, :accountNumber, :balance, :summary_id, :user_id)
+      params.require(:account).permit(:name, :accountNumber, :balance, :user_id)
     end
 end
