@@ -41,10 +41,12 @@
       </thead>
       <tbody>
         <% @account.breakdowns.each do |breakdown| %>
-          <td class="ledger-data"><%= breakdown.date %></td>
-          <td class="ledger-data"><%= breakdown.content %></td>
-          <td class="ledger-data"><%= breakdown.activityType %></td>
-          <td class="ledger-data"><%= breakdown.amount %></td>
+          <tr>
+            <td class="ledger-data"><%= breakdown.date %></td>
+            <td class="ledger-data"><%= breakdown.content %></td>
+            <td class="ledger-data"><%= breakdown.activityType %></td>
+            <td class="ledger-data"><%= breakdown.amount %></td>
+          </tr>
         <% end %>
       </tbody>
     </table>
