@@ -27,6 +27,11 @@ class BreakdownsController < ApplicationController
   def create
     @breakdown = Breakdown.new(breakdown_params)
     @breakdown.account_id = params[:account_id]
+    
+    if (@breakdown.activityType == "DEBIT")
+      @breakdown.amount = @breakdown.amount * -1;
+    end
+
     if @breakdown.save
       redirect_to @breakdown.account
     else
