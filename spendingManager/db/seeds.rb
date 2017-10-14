@@ -1,7 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# db/seed.rb
+
+require 'csv'
+
+# Seeding daily_totals table with calander.
+daily_total_seed_file = File.read(Rails.root.join('lib','seeds','daily_total_seed.csv'))
+daily_total = CSV.parse(daily_total_seed_file, :headers => true, :encoding => 'ISO-8859-1')
+daily_total.each do |row|
+  t = DailyTotal.new
+  t.date = row['DATE']
+  t.total = row['TOTAL']
+  t.save
+  puts "#{t.date}, #{t.total} saved"
+end
