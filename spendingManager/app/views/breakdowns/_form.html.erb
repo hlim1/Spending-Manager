@@ -11,27 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date, id: :breakdown_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_field :content, id: :breakdown_content %>
-  </div>
-
-  <div class="field">
-    <%= form.label :activityType %>
-    <%= form.select :activityType, options_for_select([['CREDIT', 'CREDIT'], ['DEBIT', 'DEBIT']]), id: :breakdown_content %>
-  </div>
-
-  <div class="field">
-    <%= form.label :amount %>
-    <%= form.text_field :amount, id: :breakdown_amount %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <table id="breakdown-input-table">
+    <thead>
+      <tr>
+        <th><%= form.label :date %></th>
+        <th><%= form.label :content %></th>
+        <th><%= form.label :Type %></th>
+        <th><%= form.label :amount %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="ledger-data"><%= form.date_select :date, id: :breakdown_date %></td>
+        <td class="ledger-data"><%= form.text_field :content, id: :breakdown_content %></td>
+        <td class="ledger-data"><%= form.select :activityType, options_for_select([['DEBIT', 'DEBIT'], ['CREDIT', 'CREDIT']]), id: :breakdown_content %></td>
+        <td class="ledger-data"><%= form.text_field :amount, id: :breakdown_amount %></td>
+        <td ><%= form.submit 'Add', id: "ledger-add"%></td>
+      </tr>
+    </tbody>
+  </table>
 <% end %>
