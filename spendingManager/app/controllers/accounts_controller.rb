@@ -12,6 +12,7 @@ class AccountsController < ApplicationController
   # GET /accounts/1.json
   def show
     @breakdown = @account.breakdowns.new
+    @total = DailyTotal.all
   end
 
   # GET /accounts/new

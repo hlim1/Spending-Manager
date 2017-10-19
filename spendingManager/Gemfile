@@ -46,6 +46,8 @@ gem 'json'
 # gem for money and currency
 gem 'money-rails', '~>1'
 
+gem 'goog_currency'
+
 # gem for installing bootstrap
 gem 'bootstrap', '~>4.0.0.alpha6'
 
