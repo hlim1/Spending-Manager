@@ -1,0 +1,79 @@
+<div id="side-menu">
+  <%= link_to "My Profile", edit_user_registration_path, :class => :links %><br />
+  <%= link_to "Summary", summaries_path, :class => :links %><br />
+  <%= link_to "Accounts Detail", accounts_path, :class => :links %><br />
+  <%= link_to "Exchange Rates", exchange_rates_path, :class => :links %><br />
+  <%= link_to "Analysis", summaries_path, :class => :links %>
+  <br />
+  <br />
+  <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => :links %>
+</div>
+
+
+<div class="accounts">
+  <h1>Exchange Rates</h1>
+
+  <br/>
+
+  <!-- Displaying 5 default real-time currency rates -->
+  <table>
+    <thead>
+      <tr>
+        <th>Currency</th>
+        <th>Default USD Value</th>
+        <th>Converted Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Euro (EUR)</td>
+        <td>10</td>
+        <td><%= @rates['EUR'] * 10 %></td>
+      </tr>
+      <tr>
+        <td>Great Britain Pound (GBP)</td>
+        <td>10</td>
+        <td><%= @rates['GBP'] * 10%></td>
+      </tr>
+      <tr>
+        <td>Korean WON (KRW)</td>
+        <td>1</td>
+        <td><%= @rates['KRW'] %></td>
+      </tr>
+      <tr>
+        <td>Japan Yes (JPY)</td>
+        <td>1</td>
+        <td><%= @rates['JPY'] %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br/>
+
+  <!-- Convert balance of accounts into selected currency,
+       then display them in each row of a table -->
+  <table>
+    <thead>
+      <tr>
+        <th>Bank</th>
+        <th>Currenct Balance</th>
+        <th>Currency</th>
+        <th>Converted</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @accounts.each do |account| %>
+        <tr>
+          <td><%= account.name %></td>
+          <td><%= account.balance %></td>
+          <td></td>
+          <td><%= (account.balance * @rates['KRW']).to_money %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <% @rates.each do |rate| %>
+    <%= rate.select :cur, @rates %>
+  <% end %>
+</div>
