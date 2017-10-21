@@ -15,6 +15,7 @@ class ExchangeRatesController < ApplicationController
 
     # Create an object to get an access from the view
     @rates = response_obj["rates"]
+    @currencies = response_obj["rates"].keys
 
     # To retrieve bank information
     @accounts = Account.all

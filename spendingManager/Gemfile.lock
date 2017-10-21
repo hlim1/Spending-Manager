@@ -89,6 +89,7 @@ GEM
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     goog_currency (1.1.0)
+    googlecharts (1.6.12)
     i18n (0.8.6)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -224,6 +225,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   goog_currency
+  googlecharts
   jbuilder (~> 2.5)
   json
   listen (>= 3.0.5, < 3.2)

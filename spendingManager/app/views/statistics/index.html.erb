@@ -1,0 +1,26 @@
+<div id="side-menu">
+  <%= link_to "My Profile", edit_user_registration_path, :class => :links %><br />
+  <%= link_to "Summary", summaries_path, :class => :links %><br />
+  <%= link_to "Accounts Detail", accounts_path, :class => :links %><br />
+  <%= link_to "Exchange Rates", exchange_rates_path, :class => :links %><br />
+  <%= link_to "Statistics", statistics_path, :class => :links %>
+  <br />
+  <br />
+  <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => :links %>
+</div>
+
+<div class="accounts">
+  <h1>Statistics</h1>
+  <!--Able to create bar, line, and pie charts just by replacing .bar into right type name-->
+  <%= image_tag(Gchart.bar :size => '340x260', 
+                           :stacked => false,
+                           :title => 'Chart Example',
+                           :data => [5,1,10,6,13],
+                           :legend => ['example-1','example-2','example-3'],
+                           :bar_colors => ['3300CC','3399FF','33CCFF'],
+                           :axis_with_labels => [['x'],['y']],
+                           :max_value => 15,
+                           :min_value => 0,
+                           :axis_labels => [["A|B|C|D|E"]]
+                           ) %>
+</div>
