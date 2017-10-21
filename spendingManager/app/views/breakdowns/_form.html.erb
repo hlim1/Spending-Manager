@@ -14,18 +14,20 @@
   <table id="breakdown-input-table">
     <thead>
       <tr>
-        <th><%= form.label :date %></th>
-        <th><%= form.label :content %></th>
-        <th><%= form.label :Type %></th>
-        <th><%= form.label :amount %></th>
+        <th class="breakdown-data"><%= form.label :date, class: :form_th %></th>
+        <th class="breakdown-data"><%= form.label :content %></th>
+        <th class="breakdown-data", style="text-align:center"><%= form.label :activity_Type %></th>
+        <th class="breakdown-data", style="text-align:center"><%= form.label :spending_Type %></th>
+        <th class="breakdown-data", style="text-align:center"><%= form.label :amount %></th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td class="ledger-data"><%= form.date_select :date, id: :breakdown_date %></td>
-        <td class="ledger-data"><%= form.text_field :content, id: :breakdown_content %></td>
-        <td class="ledger-data"><%= form.select :activityType, options_for_select([['DEBIT', 'DEBIT'], ['CREDIT', 'CREDIT']]), id: :breakdown_content %></td>
-        <td class="ledger-data"><%= form.text_field :amount, id: :breakdown_amount %></td>
+        <td class="breakdown-data"><%= form.date_select :date, id: :breakdown_date %></td>
+        <td class="breakdown-data"><%= form.text_field :content, id: :breakdown_content %></td>
+        <td class="breakdown-data", style="text-align:center"><%= form.select :activityType, options_for_select(@activityTypes.collect { |a| [a,a] }), id: :breakdown_content %></td>
+        <td class="breakdown-data", style="text-align:center"><%= form.select :spendingType, options_for_select(@spendingTypes.collect { |s| [s,s] }), {include_blank: 'None'}, id: :breakdown_content %></td>
+        <td class="breakdown-data", style="text-align:center"><%= form.text_field :amount, id: :breakdown_amount %></td>
         <td ><%= form.submit 'Add', id: "ledger-add"%></td>
       </tr>
     </tbody>

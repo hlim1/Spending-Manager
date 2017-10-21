@@ -36,6 +36,7 @@
           <th style="width:7em">Date</th>
           <th style="width:16em">Content</th>
           <th>Debit / Credit</th>
+          <th>Spending Type</th>
           <th>Amount</th>
         </tr>
       </thead>
@@ -46,6 +47,7 @@
               <td class="ledger-data"><%= breakdown.date %></td>
               <td class="ledger-data"><%= breakdown.content %></td>
               <td class="ledger-data"><%= breakdown.activityType %></td>
+              <td class="ledger-data"><%= breakdown.spendingType %></td>
               <td class="ledger-data">$<%= breakdown.amount.to_money %></td>
             <% end %>
           </tr>

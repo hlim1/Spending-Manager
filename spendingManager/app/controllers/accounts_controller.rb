@@ -13,6 +13,8 @@ class AccountsController < ApplicationController
   def show
     @breakdown = @account.breakdowns.new
     @total = DailyTotal.all
+    @activityTypes = ["DEBIT","CREDIT"]
+    @spendingTypes = ["Food", "Transportation", "Rent/Maintenance", "Travle", "Luxuries", "Other"]
   end
 
   # GET /accounts/new

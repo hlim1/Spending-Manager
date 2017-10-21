@@ -28,6 +28,7 @@ class BreakdownsController < ApplicationController
     @breakdown = Breakdown.new(breakdown_params)
     @breakdown.account_id = params[:account_id]
     
+    
     if (@breakdown.activityType == "DEBIT")
       @breakdown.amount = @breakdown.amount * -1;
     end
@@ -71,6 +72,6 @@ class BreakdownsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def breakdown_params
-      params.require(:breakdown).permit(:date, :content, :activityType, :amount, :account)
+      params.require(:breakdown).permit(:date, :content, :activityType, :spendingType, :amount, :account)
     end
 end

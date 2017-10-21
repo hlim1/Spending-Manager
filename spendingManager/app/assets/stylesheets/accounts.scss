@@ -16,9 +16,7 @@ table#ledger-table {
 }
 
 //----------------Class-------------------------------------------
-.ledger-data {
-  text-align: left;
-}
+
 .form-body {
   margin-left: 80px;
 }
@@ -31,4 +29,7 @@ table#ledger-table {
   border-radius: 15px 15px 15px 15px;
 
   background-color: #222222;
+}
+.ledger-data {
+  text-align: left;
 }
