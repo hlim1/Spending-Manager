@@ -37,3 +37,19 @@ breakdown.each do |row|
   t.account_id = row['account_id']
   t.save
 end
+
+# Seeding monthly_total
+monthlyTotals = MonthlyTotal.create (
+  [ { year: 2017, month: 1, total: 0.00 },
+    { year: 2017, month: 2, total: 0.00 },
+    { year: 2017, month: 3, total: 0.00 },
+    { year: 2017, month: 4, total: 0.00 },
+    { year: 2017, month: 5, total: 0.00 },
+    { year: 2017, month: 6, total: 0.00 },
+    { year: 2017, month: 7, total: 0.00 },
+    { year: 2017, month: 8, total: 0.00 },
+    { year: 2017, month: 9, total: 0.00 },
+    { year: 2017, month: 10, total: 0.00 },
+    { year: 2017, month: 11, total: 0.00 },
+    { year: 2017, month: 12, total: 0.00 },
+  ] )

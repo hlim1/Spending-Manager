@@ -7,6 +7,7 @@ class StatisticsController < ApplicationController
   # GET /statistics.json
   def index
     @statistics = Statistic.all
+    @totals = DailyTotal.all
   end
 
   # GET /statistics/1
