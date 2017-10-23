@@ -10,5 +10,30 @@ daily_total.each do |row|
   t.date = row['DATE']
   t.total = row['TOTAL']
   t.save
-  puts "#{t.date}, #{t.total} saved"
+end
+
+# Seeding user for demonstration.
+users = User.create (
+  [ { email: "hlim1@mail.csuchico.edu", firstname: "HEUICHAN", lastname: "LIM", 
+      password: "dlagmlcks24", password_confirmation: "dlagmlcks24" } ] )
+
+# Seeding account information.
+accounts = Account.create (
+  [ { name: "CHASE", accountNumber: 1234, balance: 1000.00, user_id: 1 },
+    { name: "CITI BANK", accountNumber: 4569, balance: 2000.00, user_id: 1 },
+    { name: "Bank of America", accountNumber: 5268, balance: 9090.00, user_id: 1 }
+  ] )
+
+# Seeding for breakdwons.
+breakdown_seed = File.read(Rails.root.join('lib','seeds','breakdownSeed.csv'))
+breakdown = CSV.parse(breakdown_seed, :headers => true, :encoding => 'ISO-8859-1')
+breakdown.each do |row|
+  t = Breakdown.new
+  t.date = row['date']
+  t.content = row['content']
+  t.activityType = row['activityType']
+  t.spendingType = row['spendingType']
+  t.amount = row['amount']
+  t.account_id = row['account_id']
+  t.save
 end
