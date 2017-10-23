@@ -12,27 +12,32 @@
 <div class="accounts">
   <h1>Statistics</h1>
   <!--Able to create bar, line, and pie charts just by replacing .bar into right type name-->
-  <%= image_tag(Gchart.bar :size => '340x260', 
+  <%= image_tag(Gchart.bar :size => '600x400', 
                            :stacked => false,
                            :title => 'Chart Example',
-                           :data => [5,1,10,6,13],
-                           :legend => ['example-1','example-2','example-3'],
+                           :data => [1,4,3,5,9],
+                           :legend => ['example-1'],
                            :bar_colors => ['3300CC','3399FF','33CCFF'],
                            :axis_with_labels => [['x'],['y']],
-                           :max_value => 15,
-                           :min_value => 0,
+                           :axis_range =>[nil, [0,15,1]],
                            :axis_labels => [["A|B|C|D|E"]]
                            ) %>
 
-  <%= image_tag(Gchart.bar :size => '340x260', 
-                           :stacked => false,
-                           :title => 'Monthly Spending',
-                           :data => [5,1,10,6,13],
-                           :legend => ['example-1','example-2','example-3'],
-                           :bar_colors => ['3300CC','3399FF','33CCFF'],
-                           :axis_with_labels => [['x'],['y']],
-                           :max_value => 15,
-                           :min_value => 0,
-                           :axis_labels => [["Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"]]
+  <%= image_tag(Gchart.line :size => '600x400', 
+                            :stacked => false,
+                            :title => 'Monthly Spending',
+                            :data => @mTotals,
+                            :axis_with_labels => [['x'],['y']],
+                            :axis_range => [nil, [0,2700,100]],
+                            :axis_labels => [["Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"]]
                            ) %>
+
+  <div id="test-remove-later">
+  <br>
+    <% @mTotals.each do |mt| %>
+      <%= mt %>
+      <br>
+    <% end %>
+  </div>
+      
 </div>

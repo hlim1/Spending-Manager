@@ -7,7 +7,22 @@ class StatisticsController < ApplicationController
   # GET /statistics.json
   def index
     @statistics = Statistic.all
-    @totals = DailyTotal.all
+
+    @dailyTotals = DailyTotal.all
+    @monthlyTotals = MonthlyTotal.all
+
+    @monthlyTotals.each { |mt|
+      @dailyTotals.each { |dt|
+        if dt.date.year == mt.year && dt.date.month == mt.month
+          mt.total += dt.total
+        end
+      } # end of inner dailyTotal loop
+    } 
+    @mTotals = Array.new
+    @monthlyTotals.each { |mt|
+      @mTotals.push(mt.total)
+    }
+    @min, @max = @mTotals.minmax
   end
 
   # GET /statistics/1
