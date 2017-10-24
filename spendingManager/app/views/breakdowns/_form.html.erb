@@ -28,6 +28,7 @@
         <td class="breakdown-data", style="text-align:center"><%= form.select :activityType, options_for_select(@activityTypes.collect { |a| [a,a] }), id: :breakdown_content %></td>
         <td class="breakdown-data", style="text-align:center"><%= form.select :spendingType, options_for_select(@spendingTypes.collect { |s| [s,s] }), {include_blank: 'None'}, id: :breakdown_content %></td>
         <td class="breakdown-data", style="text-align:center"><%= form.text_field :amount, id: :breakdown_amount %></td>
+
         <td ><%= form.submit 'Add', id: "ledger-add"%></td>
       </tr>
     </tbody>

@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20171023024500) do
     t.string "content"
     t.string "activityType"
     t.string "spendingType", default: "None"
+    t.decimal "debit"
+    t.decimal "credit"
     t.decimal "amount"
     t.integer "account_id"
     t.datetime "created_at", null: false

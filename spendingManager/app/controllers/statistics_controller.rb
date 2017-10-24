@@ -17,7 +17,7 @@ class StatisticsController < ApplicationController
           mt.total += dt.total
         end
       } # end of inner dailyTotal loop
-    } 
+    }
     @mTotals = Array.new
     @monthlyTotals.each { |mt|
       @mTotals.push(mt.total)

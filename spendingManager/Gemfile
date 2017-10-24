@@ -45,10 +45,12 @@ gem 'devise'
 gem 'json'
 # gem for money and currency
 gem 'money-rails', '~>1'
-
 gem 'goog_currency'
 
+# gem for charts
 gem "googlecharts", :require => "gchart"
+gem "chartkick"
+gem "groupdate"
 
 # gem for installing bootstrap
 gem 'bootstrap', '~>4.0.0.alpha6'

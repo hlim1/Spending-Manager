@@ -16,34 +16,39 @@
   <br/>
 
   <!-- Displaying 5 default real-time currency rates -->
+  <!-- Default 'Money' gem's subunit is in cents, so 100 == 1 and 1000 == 10 -->
   <table>
     <thead>
       <tr>
         <th>Currency</th>
-        <th>Default USD Value</th>
+        <th>Default USD($) Value</th>
         <th>Converted Value</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>Euro (EUR)</td>
-        <td>10</td>
-        <td><%= @rates['EUR'] * 10 %></td>
+        <td>$10</td>
+        <% euro = Money.new((@rates['EUR']*1000),'EUR').format %>
+        <td><%= euro %></td>
       </tr>
       <tr>
         <td>Great Britain Pound (GBP)</td>
-        <td>10</td>
-        <td><%= @rates['GBP'] * 10%></td>
+        <td>$10</td>
+        <% britishPound = Money.new((@rates['GBP'] * 1000),'GBP').format %>
+        <td><%= britishPound %></td>
       </tr>
       <tr>
         <td>Korean WON (KRW)</td>
-        <td>1</td>
-        <td><%= @rates['KRW'] %></td>
+        <td>$1</td>
+        <% koreanWon = Money.new((@rates['KRW']),'KRW').format %>
+        <td><%= koreanWon %></td>
       </tr>
       <tr>
         <td>Japan Yes (JPY)</td>
-        <td>1</td>
-        <td><%= @rates['JPY'] %></td>
+        <td>$1</td>
+        <% japaneseYen = Money.new((@rates['JPY']),'JPY').format %>
+        <td><%= japaneseYen %></td>
       </tr>
     </tbody>
   </table>
