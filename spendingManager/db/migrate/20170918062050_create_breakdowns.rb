@@ -5,9 +5,9 @@ class CreateBreakdowns < ActiveRecord::Migration[5.1]
       t.string :content
       t.string :activityType
       t.string :spendingType, :default => "None"
-      t.decimal :debit
-      t.decimal :credit
-      t.decimal :amount
+      t.decimal :debit, :default => 0.00
+      t.decimal :credit, :default => 0.00
+      t.decimal :amount, :default => 0.00
       t.references :account , index: true, foreign_key: true
 
       t.timestamps

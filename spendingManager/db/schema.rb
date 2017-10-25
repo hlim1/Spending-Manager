@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171023024500) do
+ActiveRecord::Schema.define(version: 20171024233912) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "name"
@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(version: 20171023024500) do
     t.string "content"
     t.string "activityType"
     t.string "spendingType", default: "None"
-    t.decimal "debit"
-    t.decimal "credit"
-    t.decimal "amount"
+    t.decimal "debit", default: "0.0"
+    t.decimal "credit", default: "0.0"
+    t.decimal "amount", default: "0.0"
     t.integer "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
