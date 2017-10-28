@@ -14,7 +14,7 @@ class AccountsController < ApplicationController
     @breakdown = @account.breakdowns.new
     @totals = DailyTotal.all
     @activityTypes = ["DEBIT","CREDIT"]
-    @spendingTypes = ["Food", "Transportation", "Rent/Maintenance", "Travle", "Luxuries", "Other"]
+    @spendingTypes = ["Food", "Education", "Transportation", "Rent/Maintenance", "Travle", "Luxuries", "Other"]
   end
 
   # GET /accounts/new

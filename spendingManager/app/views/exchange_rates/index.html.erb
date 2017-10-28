@@ -68,13 +68,36 @@
     </thead>
     <tbody>
       <% @accounts.each do |account| %>
-        <tr>
+        <% if account.user == current_user %>
+        <tr id="account-currency-info">
           <td><%= account.name %></td>
-          <td><%= account.balance %></td>
-          <td></td>
-          <td><%= (account.balance * @rates['KRW']).to_money %></td>
+          <td id="balances"><%= account.balance %></td>
+
+          <td>
+            <form>
+              <select id="currencies">
+                <% @currencies.each do |currency| %>
+                  <option><%= currency %></option>
+                <% end %>
+              </select> 
+            </form>
+          </td>
+
+          <td id="convertedBalance"></td>
         </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>
+  <button onclick="convert()">Convert</button>
 </div>
+
+<script>
+  function convert() {
+    var currency = document.getElementById("currencies").value;
+    var balance = document.getElementById("balances");
+    document.getElementById("convertedBalance").innerHTML = balance.innerHTML;
+
+    var convertedBalance = document.createElement("td");
+  }
+</script>

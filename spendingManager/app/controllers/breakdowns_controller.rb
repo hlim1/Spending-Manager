@@ -46,7 +46,7 @@ class BreakdownsController < ApplicationController
   def update
     respond_to do |format|
       if @breakdown.update(breakdown_params)
-        format.html { redirect_to @breakdown, notice: 'Breakdown was successfully updated.' }
+        format.html { redirect_to @breakdown.account, notice: 'Breakdown was successfully updated.' }
         format.json { render :show, status: :ok, location: @breakdown }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class BreakdownsController < ApplicationController
   def destroy
     @breakdown.destroy
     respond_to do |format|
-      format.html { redirect_to breakdowns_url, notice: 'Breakdown was successfully destroyed.' }
+      format.html { redirect_to account_path(@breakdown.account),  notice: 'Breakdown was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

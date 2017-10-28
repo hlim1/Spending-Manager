@@ -1,2 +1,3 @@
 class DailyTotal < ApplicationRecord
+
 end

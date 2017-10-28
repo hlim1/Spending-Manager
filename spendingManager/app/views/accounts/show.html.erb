@@ -29,31 +29,71 @@
     </table>
   </div>
   
-  <div id="account-ledger">
-    <table id="ledger-table">
-      <thead>
-        <tr>
-          <th style="width:7em">Date</th>
-          <th style="width:16em">Content</th>
-          <th>Debit / Credit</th>
-          <th>Spending Type</th>
-          <th>Amount</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @account.breakdowns.each do |breakdown| %>
-          <tr>
-            <% if breakdown.id %>
-              <td class="ledger-data"><%= breakdown.date %></td>
-              <td class="ledger-data"><%= breakdown.content %></td>
-              <td class="ledger-data"><%= breakdown.activityType %></td>
-              <td class="ledger-data"><%= breakdown.spendingType %></td>
-              <td class="ledger-data">$<%= breakdown.amount.to_money %></td>
+  <div id="accordion">
+    <h3>January</h3>
+      <div>
+        <table id="ledger-table">
+          <thead>
+            <tr>
+              <th style="width:7em">Date</th>
+              <th style="width:15em">Content</th>
+              <th>Act.Type</th>
+              <th>Spd.Type</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @account.breakdowns.each do |breakdown| %>
+              <% if breakdown.date.to_s.slice(5..6) == "01" %>
+              <tr>
+                <% if breakdown.id %>
+                  <td class="ledger-data"><%= breakdown.date %></td>
+                  <td class="ledger-data"><%= breakdown.content %></td>
+                  <td class="ledger-data"><%= breakdown.activityType %></td>
+                  <td class="ledger-data"><%= breakdown.spendingType %></td>
+                  <td class="ledger-data">$<%= breakdown.amount.to_money %></td>
+                  <td><%= link_to 'Edit', edit_breakdown_path(breakdown), :class => :links %></td>
+                  <td><%= link_to 'Remove', breakdown, method: :delete, data: { confirm: 'Are you sure?' }, :class => :links %></td>
+                <% end %>
+              </tr>
+              <% end %>
             <% end %>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+          </tbody>
+        </table>
+      </div>
+    <h3>February</h3>
+    <div>
+    </div> 
+    <h3>March</h3>
+    <div>
+    </div> 
+    <h3>April</h3>
+    <div>
+    </div> 
+    <h3>May</h3>
+    <div>
+    </div> 
+    <h3>June</h3>
+    <div>
+    </div> 
+    <h3>July</h3>
+    <div>
+    </div> 
+    <h3>August</h3>
+    <div>
+    </div> 
+    <h3>September</h3>
+    <div>
+    </div> 
+    <h3>October</h3>
+    <div>
+    </div> 
+    <h3>Novermber</h3>
+    <div>
+    </div> 
+    <h3>December</h3>
+    <div>
+    </div> 
   </div>
 
   <%= render 'breakdowns/form' %>

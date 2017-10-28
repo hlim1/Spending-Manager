@@ -10,3 +10,5 @@ class UpdateDailyTotals < ActiveRecord::Migration[5.1]
     SQL
   end
 end
+
+# Change amount to debit after demonstration
