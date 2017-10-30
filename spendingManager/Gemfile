@@ -49,6 +49,7 @@ gem 'goog_currency'
 
 #gem for jquery-ui
 gem 'jquery-ui-rails'
+gem 'jquery-turbolinks'
 
 # gem for charts
 gem "googlecharts", :require => "gchart"

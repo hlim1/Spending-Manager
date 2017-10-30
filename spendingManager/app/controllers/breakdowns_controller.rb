@@ -20,6 +20,8 @@ class BreakdownsController < ApplicationController
 
   # GET /breakdowns/1/edit
   def edit
+    @activityTypes = ["DEBIT","CREDIT"]
+    @spendingTypes = ["Food", "Education", "Transportation", "Rent/Maintenance", "Travle", "Luxuries", "Other"]
   end
 
   # POST /breakdowns
