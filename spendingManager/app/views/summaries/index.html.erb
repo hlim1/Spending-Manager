@@ -10,7 +10,44 @@
 </div>
 
 <div class="accounts">
-  <div>
+  
+  <div id="summary">
+    <div id="accordion">
+      <% @accounts.each do |account| %>
+        <h3><%= account.name + " - " + account.accountNumber %></h3>
+          <div>
+            <table id="ledger-table">
+                <thead>
+                  <tr>
+                    <th style="width:7em">Date</th>
+                    <th style="width:15em">Content</th>
+                    <th>Act.Type</th>
+                    <th>Spd.Type</th>
+                    <th>Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% account.breakdowns.each do |breakdown| %>
+                    <% if breakdown.date.to_s.slice(5..6) == Time.current.to_s.slice(5..6) %>
+                    <tr>
+                      <% if breakdown.id %>
+                        <td class="ledger-data"><%= breakdown.date %></td>
+                        <td class="ledger-data"><%= breakdown.content %></td>
+                        <td class="ledger-data"><%= breakdown.activityType %></td>
+                        <td class="ledger-data"><%= breakdown.spendingType %></td>
+                        <td class="ledger-data">$<%= breakdown.amount.to_money %></td>
+                      <% end %>
+                    </tr>
+                    <% end %>
+                  <% end %>
+                </tbody>
+              </table>
+          </div>
+      <% end %> <!--@accounts.each-->
+    </div> <!--id="accordion"-->
+  </div> <!--id="summary"-->
+
+  <div id="account-summary">
     <h1>Account List</h1>
 
     <br/>
@@ -38,7 +75,7 @@
         <% end %>
       </tbody>
     </table>
-  </div>
+  </div> <!--id="account-summary"-->
 
   <div>
     <h1>Statistic</h1>
