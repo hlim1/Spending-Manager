@@ -7,22 +7,42 @@ class StatisticsController < ApplicationController
   # GET /statistics.json
   def index
     @statistics = Statistic.all
+    dailyTotals = DailyTotal.all
+    monthlyTotals = MonthlyTotal.all
+    breakdowns = Breakdown.all
 
-    @dailyTotals = DailyTotal.all
-    @monthlyTotals = MonthlyTotal.all
-
-    @monthlyTotals.each { |mt|
-      @dailyTotals.each { |dt|
+    monthlyTotals.each { |mt|
+      dailyTotals.each { |dt|
         if dt.date.year == mt.year && dt.date.month == mt.month
           mt.total += dt.total
         end
       } # end of inner dailyTotal loop
     }
+
     @mTotals = Array.new
-    @monthlyTotals.each { |mt|
+    monthlyTotals.each { |mt|
       @mTotals.push(mt.total)
     }
     @min, @max = @mTotals.minmax
+
+    @spendingTypes = {"Food" => 0, "Education" => 0, "Transporation" => 0, "Rent/Maintenance" => 0, "Travle" => 0, "Luxuries" => 0, "Other" => 0}
+    breakdowns.each { |breakdown|
+      if (breakdown.spendingType == "Food")
+        @spendingTypes["Food"] += 1
+      elsif (breakdown.spendingType == "Education")
+        @spendingTypes["Education"] += 1
+      elsif (breakdown.spendingType == "Transportation")
+        @spendingTypes["Transportation"] += 1
+      elsif (breakdown.spendingType == "Rent/maintenance")
+        @spendingTypes["Rent/maintenance"] += 1
+      elsif (breakdown.spendingType == "Travle")
+        @spendingTypes["Travle"] += 1
+      elsif (breakdown.spendingType == "Luxuries")
+        @spendingTypes["Luxuries"] += 1
+      elsif (breakdown.spendingType == "Travle")
+        @spendingTypes["Other"] += 1
+      end
+    } 
   end
 
   # GET /statistics/1

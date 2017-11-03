@@ -428,31 +428,4 @@
   </div> <!--id="tabs"-->
 
   <%= render 'breakdowns/form' %>
-
-  </br>
-
-  <h1>Daily Total</h1>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Date:</th>
-        <th>Total:</th>
-      </tr>
-      <tr>
-      </tr>
-    </thead>
-    <tbody>
-      <% @totals.each do |t| %>
-        <% if t.total != 0 %>
-          <tr>
-            <td> <%= t.date %></td>
-            <td> <%= t.total %></td>
-          </tr>
-        <% end %>
-      <% end %>
-    </tbody>
-  </table>
- 
-  </br>
 </div> <!--class="accounts"-->

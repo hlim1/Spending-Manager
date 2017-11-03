@@ -11,7 +11,8 @@
 
 <div class="accounts">
   
-  <div id="summary">
+  <div id="account-summary">
+    <h1>Account List</h1>
     <div id="accordion">
       <% @accounts.each do |account| %>
         <h3><%= account.name + " - " + account.accountNumber %></h3>
@@ -45,37 +46,9 @@
           </div>
       <% end %> <!--@accounts.each-->
     </div> <!--id="accordion"-->
-  </div> <!--id="summary"-->
-
-  <div id="account-summary">
-    <h1>Account List</h1>
-
-    <br/>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Financial Institution</th>
-          <th>Account Number (Last 4-digits)</th>
-          <th>Current Balance</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @accounts.each do |account| %>
-          <% if account.user == current_user %> <!--Current user can see only his/her own list-->
-            <tr>
-              <td><%= account.name %></td>
-              <td><%= account.accountNumber %></td>
-              <td><%= account.balance.to_money %></td>
-              <td></td>
-            </tr>
-          <% end %>
-        <% end %>
-      </tbody>
-    </table>
   </div> <!--id="account-summary"-->
+
+  <br/>
 
   <div>
     <h1>Statistic</h1>

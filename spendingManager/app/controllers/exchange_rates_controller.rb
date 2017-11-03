@@ -17,6 +17,15 @@ class ExchangeRatesController < ApplicationController
     @rates = response_obj["rates"]
     @currencies = response_obj["rates"].keys
 
+    # Format the currency before passed to javascript 
+    @formated_rates = Hash.new
+    @rates.each { |currency, rate|
+      @formated_rates[currency] = Money.new((@rates[currency]),currency).format
+    }
+
+    # Assign @rates object to gon object, so it can be used in the .js file 
+    gon.exchange_rate = @rates
+
     # To retrieve bank information
     @accounts = Account.all
   end

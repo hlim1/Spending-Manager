@@ -34,6 +34,7 @@ class BreakdownsController < ApplicationController
       @breakdown.debit = @breakdown.amount
     else
       @breakdown.credit = @breakdown.amount
+      @breakdown.spendingType = "None"
     end
     
     if @breakdown.save

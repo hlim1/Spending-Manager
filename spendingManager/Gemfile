@@ -43,6 +43,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 # gem for jSon
 gem 'json'
+# gem for passing data from controller to javascript
+gem 'gon'
+
 # gem for money and currency
 gem 'money-rails', '~>1'
 gem 'goog_currency'
