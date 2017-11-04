@@ -25,18 +25,18 @@ accounts = Account.create (
   ] )
 
 # Seeding for breakdwons.
-breakdown_seed = File.read(Rails.root.join('lib','seeds','breakdownSeed.csv'))
-breakdown = CSV.parse(breakdown_seed, :headers => true, :encoding => 'ISO-8859-1')
-breakdown.each do |row|
-  t = Breakdown.new
-  t.date = row['date']
-  t.content = row['content']
-  t.activityType = row['activityType']
-  t.spendingType = row['spendingType']
-  t.amount = row['amount']
-  t.account_id = row['account_id']
-  t.save
-end
+#breakdown_seed = File.read(Rails.root.join('lib','seeds','breakdownSeed.csv'))
+#breakdown = CSV.parse(breakdown_seed, :headers => true, :encoding => 'ISO-8859-1')
+#breakdown.each do |row|
+#  t = Breakdown.new
+#  t.date = row['date']
+#  t.content = row['content']
+#  t.activityType = row['activityType']
+#  t.spendingType = row['spendingType']
+#  t.amount = row['amount']
+#  t.account_id = row['account_id']
+#  t.save
+#end
 
 # Seeding monthly_total
 monthlyTotals = MonthlyTotal.create (

@@ -13,6 +13,7 @@
   
   <div id="account-summary">
     <h1>Account List</h1>
+    <br/>
     <div id="accordion">
       <% @accounts.each do |account| %>
         <h3><%= account.name + " - " + account.accountNumber %></h3>
@@ -49,8 +50,13 @@
   </div> <!--id="account-summary"-->
 
   <br/>
+  <br/>
 
-  <div>
+  <div id="statistic-summary">
     <h1>Statistic</h1>
+    <br/>
+    <div id="barchart_for_current_balances" style="width: 600px; height: 400px; float: right;"></div>
+    <div id="linechart_for_monthly_spending" style="width: 600px; height: 400px;"></div>
   </div>
+    <br/>
 </div>

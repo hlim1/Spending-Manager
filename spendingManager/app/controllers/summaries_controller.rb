@@ -7,6 +7,56 @@ class SummariesController < ApplicationController
   def index
     @summaries = Summary.all
     @accounts = Account.all
+
+    dailyTotals = DailyTotal.all
+    monthlyTotals = MonthlyTotal.all
+
+    # Calculating the monthly total by adding daily total values
+    monthlyTotals.each { |mt|
+      dailyTotals.each { |dt|
+        if dt.date.year == mt.year && dt.date.month == mt.month
+          mt.total += dt.total
+        end
+      } # end of inner dailyTotal loop
+    } # end of monthlyTotal loop
+
+    # For linechart to display monthly total spendings
+    mTotals = Array.new
+    monthlyTotals.each { |mt|
+      case mt.month
+      when 1
+        mTotals.push(["January",mt.total.to_f])
+      when 2
+        mTotals.push(["February",mt.total.to_f])
+      when 3
+        mTotals.push(["March",mt.total.to_f])
+      when 4
+        mTotals.push(["April",mt.total.to_f])
+      when 5
+        mTotals.push(["May",mt.total.to_f])
+      when 6
+        mTotals.push(["June",mt.total.to_f])
+      when 7
+        mTotals.push(["July",mt.total.to_f])
+      when 8
+        mTotals.push(["August",mt.total.to_f])
+      when 9
+        mTotals.push(["September",mt.total.to_f])
+      when 10
+        mTotals.push(["October",mt.total.to_f])
+      when 11
+        mTotals.push(["November",mt.total.to_f])
+      when 12
+        mTotals.push(["December",mt.total.to_f])
+      end
+    }
+    gon.mTotals = mTotals
+
+    balanceSummary = Array.new
+    @accounts.each { |account|
+      balanceSummary.push ([account.name,account.balance.to_f])
+    }
+    gon.balanceSummary = balanceSummary
   end
 
   # GET /summaries/1

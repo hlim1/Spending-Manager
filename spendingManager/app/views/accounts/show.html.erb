@@ -56,11 +56,10 @@
                   <tr>
                     <% if breakdown.id %>
                       <td class="ledger-data"><%= breakdown.date %></td>
-                      <td class="ledger-data"><%= breakdown.content %></td>
+                      <td class="ledger-data"><%= link_to breakdown.content, edit_breakdown_path(breakdown), :class => :links %></td>
                       <td class="ledger-data"><%= breakdown.activityType %></td>
                       <td class="ledger-data"><%= breakdown.spendingType %></td>
                       <td class="ledger-data">$<%= breakdown.amount.to_money %></td>
-                      <td><%= link_to 'Edit', edit_breakdown_path(breakdown), :class => :links %></td>
                       <td><%= link_to 'Remove', breakdown, method: :delete, data: { confirm: 'Are you sure?' }, :class => :links %></td>
                     <% end %>
                   </tr>
@@ -88,11 +87,10 @@
                   <tr>
                     <% if breakdown.id %>
                   <td class="ledger-data"><%= breakdown.date %></td>
-                  <td class="ledger-data"><%= breakdown.content %></td>
+                      <td class="ledger-data"><%= link_to breakdown.content, edit_breakdown_path(breakdown), :class => :links %></td>
                   <td class="ledger-data"><%= breakdown.activityType %></td>
                   <td class="ledger-data"><%= breakdown.spendingType %></td>
                   <td class="ledger-data">$<%= breakdown.amount.to_money %></td>
-                  <td><%= link_to 'Edit', edit_breakdown_path(breakdown), :class => :links %></td>
                   <td><%= link_to 'Remove', breakdown, method: :delete, data: { confirm: 'Are you sure?' }, :class => :links %></td>
                 <% end %>
               </tr>
@@ -428,4 +426,5 @@
   </div> <!--id="tabs"-->
 
   <%= render 'breakdowns/form' %>
+  <br/>
 </div> <!--class="accounts"-->

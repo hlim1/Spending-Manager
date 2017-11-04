@@ -22,6 +22,7 @@
 body {
   background-color: #333333;
   color: #FFFFFF;
+  font-size: 20px;
 }
 table {
   border-spacing: 10px;
@@ -73,6 +74,7 @@ td {
 }
 .application-name {
   font-style: italic;
+  
 }
 .return-link {
   margin-top: 100px;

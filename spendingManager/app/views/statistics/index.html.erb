@@ -14,27 +14,8 @@
 
   <br/>
 
-  <div id="spending-type-pie">
-    <%= pie_chart@spendingTypes, width: "100%", height: "500px", donut: true %>
-  </div>
-
+  <div id="linechart_for_monthly_spending" style="width: 95%; height: 400px;"></div>
   <br/>
-  <!--Able to create bar, line, and pie charts just by replacing .bar into right type name-->
-  <%= image_tag(Gchart.line :size => '600x400', 
-                            :stacked => false,
-                            :title => 'Monthly Spending',
-                            :data => @mTotals,
-                            :axis_with_labels => [['x'],['y']],
-                            :axis_range => [nil, [@min,@max,100]],
-                            :axis_labels => [["Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"]]
-                           ) %>
-
-  <div id="test-remove-later">
-  <br>
-    <% @mTotals.each do |mt| %>
-      <%= mt %>
-      <br>
-    <% end %>
-  </div>
-      
+  <div id="piechart_for_spending_types" style="width: 500px; height: 250px;"></div>
+  <br/>
 </div>

@@ -14,6 +14,11 @@ h1#account-name {
 table#ledger-table {
   text-align: left;
 }
+tbody > tr > td > a {
+  &:visited {
+    color: black;
+  }
+}
 #tabs > ul > li > a {
   font-size: 15px;
 }

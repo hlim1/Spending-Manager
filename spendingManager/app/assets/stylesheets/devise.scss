@@ -52,6 +52,7 @@
 
 #delete-account {
   height: 140px;
+  margin-top: 25px;
   padding-top: 10px;
   padding-left: 80px;
   line-height: 200%;
@@ -69,6 +70,9 @@
   border-radius: 15px 15px 0 0;
   background-color: #444444;
 }
+.title-bar > h2 {
+  font-size: 20px;
+}
 .password-rule {
   font-size: 12px;
 }
@@ -83,6 +87,7 @@
   margin-left: 80px;
 }
 .submit-btn {
+  font-size: 20px;
   background-color: #006699;
   width: 4.5em;
   height: 1.5em;
