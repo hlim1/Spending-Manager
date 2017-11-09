@@ -1,3 +1,5 @@
+<!--app/view/summaries/index.html-->
+
 <div id="side-menu">
   <%= link_to "My Profile", edit_user_registration_path, :class => :links %><br />
   <%= link_to "Summary", summaries_path, :class => :links %><br />
@@ -37,7 +39,7 @@
                         <td class="ledger-data"><%= breakdown.content %></td>
                         <td class="ledger-data"><%= breakdown.activityType %></td>
                         <td class="ledger-data"><%= breakdown.spendingType %></td>
-                        <td class="ledger-data">$<%= breakdown.amount.to_money %></td>
+                        <td class="ledger-data"><%= breakdown.amount.to_money.format %></td>
                       <% end %>
                     </tr>
                     <% end %>
@@ -55,8 +57,8 @@
   <div id="statistic-summary">
     <h1>Statistic</h1>
     <br/>
-    <div id="barchart_for_current_balances" style="width: 600px; height: 400px; float: right;"></div>
-    <div id="linechart_for_monthly_spending" style="width: 600px; height: 400px;"></div>
+    <div id="barchart_for_current_balances" style="width: 520px; height: 400px; float: right;"></div>
+    <div id="linechart_for_monthly_spending" style="width: 520px; height: 400px;"></div>
   </div>
     <br/>
 </div>

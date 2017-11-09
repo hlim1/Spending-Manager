@@ -1,3 +1,5 @@
+<!--  app/views/exchange_rates/index.html.erb -->
+
 <div id="side-menu">
   <%= link_to "My Profile", edit_user_registration_path, :class => :links %><br />
   <%= link_to "Summary", summaries_path, :class => :links %><br />
@@ -28,25 +30,25 @@
     <tbody>
       <tr>
         <td>Euro (EUR)</td>
-        <td>$10</td>
+        <td><%= 10.to_money.format %></td>
         <% euro = Money.new((@rates['EUR']*1000),'EUR').format %>
         <td><%= euro %></td>
       </tr>
       <tr>
         <td>Great Britain Pound (GBP)</td>
-        <td>$10</td>
+        <td><%= 10.to_money.format %></td>
         <% britishPound = Money.new((@rates['GBP'] * 1000),'GBP').format %>
         <td><%= britishPound %></td>
       </tr>
       <tr>
         <td>Korean WON (KRW)</td>
-        <td>$1</td>
+        <td><%= 1.to_money.format %></td>
         <% koreanWon = Money.new((@rates['KRW']),'KRW').format %>
         <td><%= koreanWon %></td>
       </tr>
       <tr>
         <td>Japan Yes (JPY)</td>
-        <td>$1</td>
+        <td><%= 1.to_money.format %></td>
         <% japaneseYen = Money.new((@rates['JPY']),'JPY').format %>
         <td><%= japaneseYen %></td>
       </tr>
@@ -65,7 +67,6 @@
         <th>Currenct Balance</th>
         <th>Currency</th>
         <th>Converted</th>
-        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -73,23 +74,23 @@
         <% if account.user == current_user %>
           <tr id="account-currency-info">
             <td><%= account.name %></td>
-            <td id="balances"><%= account.balance.to_money%></td>
+            <td class="balances"><%= account.balance.to_money%></td>
 
             <td>
-              <form>
-                <select id="currencies">
-                  <% @currencies.each do |currency| %>
-                    <option><%= currency %></option>
-                  <% end %>
-                </select> 
-              </form>
+              <select class="currencies">
+                <% @currencies.each do |currency| %>
+                  <option><%= currency %></option>
+                <% end %>
+              </select> 
             </td>
 
-            <td id="convertedBalance"></td>
-            <td><button onclick="convert()">Convert</button></td>
+            <td class="convertedBalance"><span style="font-size: 14px">"Click Convert"</span></td>
           </tr>
-        <% end %><!-- if aacount.user == current_user -->
+        <% end %><!-- if account.user == current_user -->
       <% end %><!-- @accounts.each do |account| -->
+      <tr>
+        <td colspan="4"><button onclick="convert()", id="convert">Convert</button></td>
+      </tr>
     </tbody>
   </table>
 </div>

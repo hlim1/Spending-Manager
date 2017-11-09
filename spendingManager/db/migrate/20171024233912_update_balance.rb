@@ -1,3 +1,5 @@
+# db/migrate/20171024233912_update_balance.rb
+
 class UpdateBalance < ActiveRecord::Migration[5.1]
   def change
     execute <<-SQL

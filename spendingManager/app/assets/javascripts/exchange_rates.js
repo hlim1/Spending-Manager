@@ -1,3 +1,5 @@
+// app/assets/javascripts/exchange_rates.js
+
 // function referenced from http://www.mredkj.com/javascript/nfbasic.html
 function addCommas(nStr)
 {
@@ -13,16 +15,16 @@ function addCommas(nStr)
 }
 
 function convert() {
-  var currency = document.getElementById("currencies").value;
-  var balance = document.getElementById("balances").innerHTML;
-  var rate = gon.exchange_rate[currency];
-  document.getElementById("convertedBalance").innerHTML = addCommas((balance * rate).toFixed(3));
-
   /*
-  var newTableData = createElement("td");
-  var convertedBalance = document.createTextNode(addCommas((balance * rate).toFixed(3)));
-  newTableData.appendChild(convertedBalance);
-  var row = document.getElementById("account-currency-info");
-  row.appendChild(newTableData);
+  var currency = document.getElementById("currencies").value;
+  var rate = gon.exchange_rate[currency];
+  document.getElementById("convertedBalance").innerHTML = currency + addCommas((balance * rate).toFixed(3));
   */
+ 
+  var balance = document.getElementsByClassName("balances"); 
+  var currency = document.getElementsByClassName("currencies");
+  for (i = 0; i < currency.length; i++) {
+    var rate = gon.exchange_rate[currency[i].value];
+    document.getElementsByClassName("convertedBalance")[i].innerHTML = currency[i].value + " " + addCommas((balance[i].innerHTML * rate).toFixed(3));
+  }
 }
