@@ -1,25 +1,38 @@
 <!--  app/views/exchange_rates/index.html.erb -->
 
 <div id="side-menu">
-  <%= link_to "My Profile", edit_user_registration_path, :class => :links %><br />
-  <%= link_to "Summary", summaries_path, :class => :links %><br />
-  <%= link_to "Accounts Detail", accounts_path, :class => :links %><br />
-  <%= link_to "Exchange Rates", exchange_rates_path, :class => :links %><br />
-  <%= link_to "Statistics", statistics_path, :class => :links %>
+  <div>
+    <%= link_to "My Profile", edit_user_registration_path, :class => :links %><br />
+  </div>
+  <div>
+    <%= link_to "Summary", summaries_path, :class => :links %><br />
+  </div>
+  <div>
+    <%= link_to "Accounts Detail", accounts_path, :class => :links %><br />
+  </div>
+  <div>
+    <%= link_to "Exchange Rates", exchange_rates_path, :class => :links %><br />
+  </div>
+  <div>
+    <%= link_to "Statistics", statistics_path, :class => :links %>
+  </div>
   <br />
   <br />
-  <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => :links %>
+  <div>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => :links %>
+  </div>
 </div>
 
-
 <div class="accounts">
-  <h1>Exchange Rates</h1>
+  <div class="page-name">
+    <h1>Exchange Rates</h1>
+  </div>
 
   <br/>
 
   <!-- Displaying 5 default real-time currency rates -->
   <!-- Default 'Money' gem's subunit is in cents, so 100 == 1 and 1000 == 10 -->
-  <table>
+  <table class="table-layout">
     <thead>
       <tr>
         <th>Currency</th>
@@ -47,20 +60,26 @@
         <td><%= koreanWon %></td>
       </tr>
       <tr>
-        <td>Japan Yes (JPY)</td>
+        <td>Japan Yen (JPY)</td>
         <td><%= 1.to_money.format %></td>
         <% japaneseYen = Money.new((@rates['JPY']),'JPY').format %>
         <td><%= japaneseYen %></td>
       </tr>
+      <tr>
+        <td>Chinese Yuan (CNY)</td>
+        <td><%= 1.to_money.format %></td>
+        <% chineseYuan = Money.new((@rates['CNY'] * 100),'CNY').format %>
+        <td><%= chineseYuan %></td>
+      </tr>
     </tbody>
   </table>
-
-  <br/>
+  <% time = Time.now %>
+  <p id="updated-at">Updated at: <%= time.to_formatted_s(:db) %></p>
   <br/>
 
   <!-- Convert balance of accounts into selected currency,
        then display them in each row of a table -->
-  <table>
+  <table class="table-layout">
     <thead>
       <tr>
         <th>Bank</th>
@@ -74,7 +93,7 @@
         <% if account.user == current_user %>
           <tr id="account-currency-info">
             <td><%= account.name %></td>
-            <td class="balances"><%= account.balance.to_money%></td>
+            <td>$<span class="balances"><%= account.balance.to_money %></span></td>
 
             <td>
               <select class="currencies">
@@ -93,4 +112,5 @@
       </tr>
     </tbody>
   </table>
+  <p id="updated-at">Updated at: <%= time.to_formatted_s(:db) %></p>
 </div>

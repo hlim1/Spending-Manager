@@ -15,12 +15,6 @@ function addCommas(nStr)
 }
 
 function convert() {
-  /*
-  var currency = document.getElementById("currencies").value;
-  var rate = gon.exchange_rate[currency];
-  document.getElementById("convertedBalance").innerHTML = currency + addCommas((balance * rate).toFixed(3));
-  */
- 
   var balance = document.getElementsByClassName("balances"); 
   var currency = document.getElementsByClassName("currencies");
   for (i = 0; i < currency.length; i++) {

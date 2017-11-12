@@ -1,16 +1,32 @@
+<!--app/view/statistics/index.html.erb-->
+
 <div id="side-menu">
-  <%= link_to "My Profile", edit_user_registration_path, :class => :links %><br />
-  <%= link_to "Summary", summaries_path, :class => :links %><br />
-  <%= link_to "Accounts Detail", accounts_path, :class => :links %><br />
-  <%= link_to "Exchange Rates", exchange_rates_path, :class => :links %><br />
-  <%= link_to "Statistics", statistics_path, :class => :links %>
+  <div>
+    <%= link_to "My Profile", edit_user_registration_path, :class => :links %><br />
+  </div>
+  <div>
+    <%= link_to "Summary", summaries_path, :class => :links %><br />
+  </div>
+  <div>
+    <%= link_to "Accounts Detail", accounts_path, :class => :links %><br />
+  </div>
+  <div>
+    <%= link_to "Exchange Rates", exchange_rates_path, :class => :links %><br />
+  </div>
+  <div>
+    <%= link_to "Statistics", statistics_path, :class => :links %>
+  </div>
   <br />
   <br />
-  <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => :links %>
+  <div>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => :links %>
+  </div>
 </div>
 
 <div class="accounts">
-  <h1>Statistics</h1>
+  <div class="page-name">
+    <h1>Statistics</h1>
+  </div>
 
   <br/>
 
@@ -19,4 +35,6 @@
   <div id="piechart_for_spending_types" style="width: 500px; height: 250px;"></div>
   <br/>
   <div id="donutchart" style="width: 900px; height: 500px;"></div>
+
+  <div><%= line_chart User.group_by_day(:created_at).count %></div>
 </div>

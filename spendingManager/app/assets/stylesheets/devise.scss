@@ -1,9 +1,9 @@
 // id styles
 #registration {
   position: absolute;
-  height: 31em;
-  width: 25em;
-  left: 35%;
+  height: 46em;
+  width: 30em;
+  left: 38%;
   top: 10%;
   border-radius: 15px 15px 15px 15px;
 
@@ -11,20 +11,20 @@
 }
 #login {
   position: absolute;
-  height: 20em;
-  width: 25em;
-  left: 35%;
-  top: 10%; 
+  height: 27em;
+  width: 30em;
+  left: 38%;
+  top: 28%; 
   border-radius: 15px 15px 15px 15px;
 
   background-color: #222222;
 }
 #view-profile {
   position: absolute;
-  height: 41em;
-  width: 30em;
-  left: 33%;
-  top: 10%; 
+  height: 55em;
+  width: 37em;
+  left: 35%;
+  top: 3%; 
   margin-bottom: 3%;
   border-radius: 15px 15px 15px 15px;
 
@@ -55,6 +55,8 @@
   margin-top: 25px;
   padding-top: 10px;
   padding-left: 80px;
+  padding-right: 80px;
+  margin-bottom: 3%;
   line-height: 200%;
   background-color: #444444;
   border-radius: 0 0 15px 15px;
@@ -77,11 +79,13 @@
   font-size: 12px;
 }
 .field label {
-  font: bold 20px sans-serif;
+  font: bold 20px 'Inconsolata', monospace;
   margin: 20px 0 auto;
 }
 .field input {
   margin: 10px 0 auto;
+  height: 25px;
+  width: 15em;
 }
 .sign-info {
   margin-left: 80px;
@@ -90,7 +94,8 @@
   font-size: 20px;
   background-color: #006699;
   width: 4.5em;
-  height: 1.5em;
+  height: 1.7em;
+  margin-top: 10px;
 }
 .send-me-btn {
   background-color: #006699;

@@ -1,21 +1,33 @@
 <!--app/view/summaries/index.html-->
 
 <div id="side-menu">
-  <%= link_to "My Profile", edit_user_registration_path, :class => :links %><br />
-  <%= link_to "Summary", summaries_path, :class => :links %><br />
-  <%= link_to "Accounts Detail", accounts_path, :class => :links %><br />
-  <%= link_to "Exchange Rates", exchange_rates_path, :class => :links %><br />
-  <%= link_to "Statistics", statistics_path, :class => :links %>
+  <div>
+    <%= link_to "My Profile", edit_user_registration_path, :class => :links %><br />
+  </div>
+  <div>
+    <%= link_to "Summary", summaries_path, :class => :links %><br />
+  </div>
+  <div>
+    <%= link_to "Accounts Detail", accounts_path, :class => :links %><br />
+  </div>
+  <div>
+    <%= link_to "Exchange Rates", exchange_rates_path, :class => :links %><br />
+  </div>
+  <div>
+    <%= link_to "Statistics", statistics_path, :class => :links %>
+  </div>
   <br />
   <br />
-  <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => :links %>
+  <div>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => :links %>
+  </div>
 </div>
 
 <div class="accounts">
-  
-  <div id="account-summary">
+  <div class="page-name"> 
     <h1>Account List</h1>
-    <br/>
+  </div>
+  <div id="account-summary">
     <div id="accordion">
       <% @accounts.each do |account| %>
         <h3><%= account.name + " - " + account.accountNumber %></h3>
@@ -52,11 +64,12 @@
   </div> <!--id="account-summary"-->
 
   <br/>
-  <br/>
+
+  <div class="page-name"> 
+    <h1>Statistic</h1>
+  </div>
 
   <div id="statistic-summary">
-    <h1>Statistic</h1>
-    <br/>
     <div id="barchart_for_current_balances" style="width: 520px; height: 400px; float: right;"></div>
     <div id="linechart_for_monthly_spending" style="width: 520px; height: 400px;"></div>
   </div>

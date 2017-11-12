@@ -1,15 +1,23 @@
 // Place all the styles related to the Mains controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#main-page {
+  width: 100%;
+  height: 100%;
+}
+
 #main-title {
   text-align: center;
-  margin: 15% 0 auto;
-  color: #F4D00C;
-  font: italic bold 800% sans-serif;
+  margin: 23% 0 auto;
+  color: #ffc400;
+  font-family: 'Libre Barcode 39 Text', cursive;
+  font-size: 1000%;
+  font-weight: normal;
 }
 .centering {
+  top: 10%;
   display: block;
-  margin: 2em;
+  margin: 8em;
   text-align: center;
 }
 #sign-up {

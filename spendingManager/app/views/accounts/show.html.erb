@@ -1,12 +1,26 @@
+<!--app/view/accounts/show.html.erb-->
+
 <div id="side-menu">
-  <%= link_to "My Profile", edit_user_registration_path, :class => :links %><br />
-  <%= link_to "Summary", summaries_path, :class => :links %><br />
-  <%= link_to "Accounts Detail", accounts_path, :class => :links %><br />
-  <%= link_to "Exchange Rates", exchange_rates_path, :class => :links %><br />
-  <%= link_to "Statistics", statistics_path, :class => :links %>
+  <div>
+    <%= link_to "My Profile", edit_user_registration_path, :class => :links %><br />
+  </div>
+  <div>
+    <%= link_to "Summary", summaries_path, :class => :links %><br />
+  </div>
+  <div>
+    <%= link_to "Accounts Detail", accounts_path, :class => :links %><br />
+  </div>
+  <div>
+    <%= link_to "Exchange Rates", exchange_rates_path, :class => :links %><br />
+  </div>
+  <div>
+    <%= link_to "Statistics", statistics_path, :class => :links %>
+  </div>
   <br />
   <br />
-  <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => :links %>
+  <div>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => :links %>
+  </div>
 </div>
 
 <div class="accounts">
@@ -28,9 +42,11 @@
       </tbody>
     </table>
   </div> <!--id="account-info-table"-->
+
   <br/>
   <%= render 'breakdowns/form' %>
   <br/>
+
   <div id="tabs">
     <ul>
       <li><a href="#tabs-1">2017</a></li>

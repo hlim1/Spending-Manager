@@ -1,26 +1,42 @@
+<!--app/view/accounts/index.html.erb-->
+
 <div id="side-menu">
-  <%= link_to "My Profile", edit_user_registration_path, :class => :links %><br />
-  <%= link_to "Summary", summaries_path, :class => :links %><br />
-  <%= link_to "Accounts Detail", accounts_path, :class => :links %><br />
-  <%= link_to "Exchange Rates", exchange_rates_path, :class => :links %><br />
-  <%= link_to "Statistics", statistics_path, :class => :links %>
+  <div>
+    <%= link_to "My Profile", edit_user_registration_path, :class => :links %><br />
+  </div>
+  <div>
+    <%= link_to "Summary", summaries_path, :class => :links %><br />
+  </div>
+  <div>
+    <%= link_to "Accounts Detail", accounts_path, :class => :links %><br />
+  </div>
+  <div>
+    <%= link_to "Exchange Rates", exchange_rates_path, :class => :links %><br />
+  </div>
+  <div>
+    <%= link_to "Statistics", statistics_path, :class => :links %>
+  </div>
   <br />
   <br />
-  <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => :links %>
+  <div>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => :links %>
+  </div>
 </div>
 
 <div class="accounts">
-  <h1>Account Detail</h1>
+  <div class="page-name">
+    <h1>Account Detail</h1>
+  </div>
 
   </br>
 
-  <table>
+  <table class="table-layout">
     <thead>
       <tr>
         <th>Financial Institution</th>
-        <th>Account Number (Last 4-digits)</th>
+        <th>Acct.# (Last 4-digits)</th>
         <th>Current Balance</th>
-        <th colspan="3"></th>
+        <th id="add", colspan="2">+<%= link_to 'Add Account', new_account_path, :class => :links %></th>
       </tr>
     </thead>
 
@@ -28,8 +44,8 @@
       <% @accounts.each do |account| %>
         <% if account.user == current_user %> <!--Current user can see only his/her own list-->
           <tr>
-            <td><%= link_to account.name, account, :class => :links %></td>
-            <td><%= account.accountNumber %></td>
+            <td id="link-to-acct"><%= link_to account.name, account, :class => :links %></td>
+            <td>x-<%= account.accountNumber %></td>
             <td><%= account.balance.to_money.format %></td>
             <td><%= link_to 'Edit', edit_account_path(account), :class => :links %></td>
             <td><%= link_to 'Remove', account, method: :delete, data: { confirm: 'Are you sure?' }, :class => :links %></td>
@@ -38,8 +54,4 @@
       <% end %>
     </tbody>
   </table>
-  
-  </br>
-
-  <%= link_to 'Add Account', new_account_path, :class => :links %>
 </div>

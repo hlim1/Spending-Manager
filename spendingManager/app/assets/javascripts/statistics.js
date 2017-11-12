@@ -10,7 +10,6 @@ function piechart_for_spending_types() {
   data.addColumn('string', 'Type');
   data.addColumn('number', 'Frequency');
   data.addRows(gon.spendingTypes);
-  data.addRows([["thing 1",1],["thing 2",3]]);
 
   var options = {
     title: 'Expenses on Types',

@@ -21,8 +21,13 @@
 }
 body {
   background-color: #333333;
+  background-image: url(background.jpg);
+  background-size: 100%;
+  background-repeat: repeat-y;
+  overflow: hide;
+  background-size: 100%;
   color: #FFFFFF;
-  font-size: 20px;
+  font-family: 'Inconsolata', monospace;
 }
 table {
   border-spacing: 10px;
@@ -37,9 +42,9 @@ td {
 }
 /*---Application wide id---*/
 #side-menu {
-  font-size: 20px;
+  font-size: 25px;
   height: 100%;
-  width: 20%;
+  width: 22%;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -49,9 +54,16 @@ td {
   transition: 0.5s;
 
   padding-top: 60px;
-  padding-left: 30px;
 
   line-height: 50px;
+}
+#side-menu > div {
+  padding-left: 30px;
+}
+#side-menu > div:hover {
+  font-size: 30px;
+  font-weight: bold;
+  background-color: #333333;
 }
 #account-summary {
   width: 97%;
@@ -79,4 +91,14 @@ td {
 .return-link {
   margin-top: 100px;
   margin-left: 185px;
+}
+.page-name {
+  width: 100%;
+  height: 4em;
+  line-height: 4em;
+  background: rgba(0,51,102,0.7);
+}
+.page-name > h1 {
+  font-size: 40px;
+  padding-left: 12px;
 }
