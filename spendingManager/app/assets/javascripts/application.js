@@ -13,6 +13,5 @@
 //= require chartkick
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
 //= require jquery-ui
-//= require jquery.turbolinks
+//= require_tree .
