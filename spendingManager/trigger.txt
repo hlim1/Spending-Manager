@@ -2,7 +2,7 @@ execute <<-SQL
   CREATE TRIGGER rollback_balance BEFORE DELETE ON breakdowns
   BEGIN
     UPDATE accounts
-    SET balance = balance + New.debit - New.credit
-    WHERE id = New.account_id;
+    SET balance = balance + Old.debit - Old.credit
+    WHERE id = Old.account_id;
   END;
 SQL

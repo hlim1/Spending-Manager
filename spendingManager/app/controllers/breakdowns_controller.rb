@@ -63,7 +63,7 @@ class BreakdownsController < ApplicationController
   def destroy
     @breakdown.destroy
     respond_to do |format|
-      format.html { redirect_to account_path(@breakdown.account),  notice: 'Breakdown was successfully destroyed.' }
+      format.html { redirect_to account_path(@breakdown.account),  notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

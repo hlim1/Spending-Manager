@@ -49,13 +49,13 @@
 
   <div id="tabs">
     <ul>
-      <li><a href="#tabs-1">2017</a></li>
-      <li><a href="#tabs-2">2018</a></li>
+      <li><a href="#tabs-2017">2017</a></li>
+      <li><a href="#tabs-2018">2018</a></li>
     </ul>
 
 
-    <div id="tabs-1">
-      <div id="accordion">
+    <div id="tabs-2017">
+      <div id="accordion-1">
         <h3>January</h3>
           <div id="january">
             <table id="ledger-table">
@@ -70,7 +70,8 @@
               </thead>
               <tbody>
                 <% @account.breakdowns.each do |breakdown| %>
-                  <% if breakdown.date.to_s.slice(5..6) == "01" %>
+                  <% if breakdown.date.to_s.slice(2..3) == "17" &&
+                        breakdown.date.to_s.slice(5..6) == "01" %>
                   <tr>
                     <% if breakdown.id %>
                       <td class="ledger-data"><%= breakdown.date %></td>
@@ -101,7 +102,8 @@
               </thead>
               <tbody>
                 <% @account.breakdowns.each do |breakdown| %>
-                  <% if breakdown.date.to_s.slice(5..6) == "02" %>
+                  <% if breakdown.date.to_s.slice(2..3) == "17" &&
+                        breakdown.date.to_s.slice(5..6) == "02" %>
                   <tr>
                     <% if breakdown.id %>
                   <td class="ledger-data"><%= breakdown.date %></td>
@@ -132,7 +134,8 @@
             </thead>
             <tbody>
               <% @account.breakdowns.each do |breakdown| %>
-                <% if breakdown.date.to_s.slice(5..6) == "03" %>
+                <% if breakdown.date.to_s.slice(2..3) == "17" &&
+                      breakdown.date.to_s.slice(5..6) == "03" %>
                 <tr>
                   <% if breakdown.id %>
                     <td class="ledger-data"><%= breakdown.date %></td>
@@ -164,7 +167,8 @@
             </thead>
             <tbody>
               <% @account.breakdowns.each do |breakdown| %>
-                <% if breakdown.date.to_s.slice(5..6) == "04" %>
+                <% if breakdown.date.to_s.slice(2..3) == "17" &&
+                      breakdown.date.to_s.slice(5..6) == "04" %>
                 <tr>
                   <% if breakdown.id %>
                     <td class="ledger-data"><%= breakdown.date %></td>
@@ -196,7 +200,8 @@
             </thead>
             <tbody>
               <% @account.breakdowns.each do |breakdown| %>
-                <% if breakdown.date.to_s.slice(5..6) == "05" %>
+                <% if breakdown.date.to_s.slice(2..3) == "17" &&
+                      breakdown.date.to_s.slice(5..6) == "05" %>
                 <tr>
                   <% if breakdown.id %>
                     <td class="ledger-data"><%= breakdown.date %></td>
@@ -228,7 +233,8 @@
             </thead>
             <tbody>
               <% @account.breakdowns.each do |breakdown| %>
-                <% if breakdown.date.to_s.slice(5..6) == "06" %>
+                <% if breakdown.date.to_s.slice(2..3) == "17" &&
+                      breakdown.date.to_s.slice(5..6) == "06" %>
                 <tr>
                   <% if breakdown.id %>
                     <td class="ledger-data"><%= breakdown.date %></td>
@@ -260,7 +266,8 @@
             </thead>
             <tbody>
               <% @account.breakdowns.each do |breakdown| %>
-                <% if breakdown.date.to_s.slice(5..6) == "07" %>
+                <% if breakdown.date.to_s.slice(2..3) == "17" &&
+                      breakdown.date.to_s.slice(5..6) == "07" %>
                 <tr>
                   <% if breakdown.id %>
                     <td class="ledger-data"><%= breakdown.date %></td>
@@ -292,7 +299,8 @@
             </thead>
             <tbody>
               <% @account.breakdowns.each do |breakdown| %>
-                <% if breakdown.date.to_s.slice(5..6) == "08" %>
+                <% if breakdown.date.to_s.slice(2..3) == "17" &&
+                      breakdown.date.to_s.slice(5..6) == "08" %>
                 <tr>
                   <% if breakdown.id %>
                     <td class="ledger-data"><%= breakdown.date %></td>
@@ -324,7 +332,8 @@
             </thead>
             <tbody>
               <% @account.breakdowns.each do |breakdown| %>
-                <% if breakdown.date.to_s.slice(5..6) == "09" %>
+                <% if breakdown.date.to_s.slice(2..3) == "17" &&
+                      breakdown.date.to_s.slice(5..6) == "09" %>
                 <tr>
                   <% if breakdown.id %>
                     <td class="ledger-data"><%= breakdown.date %></td>
@@ -356,7 +365,8 @@
             </thead>
             <tbody>
               <% @account.breakdowns.each do |breakdown| %>
-                <% if breakdown.date.to_s.slice(5..6) == "10" %>
+                <% if breakdown.date.to_s.slice(2..3) == "17" &&
+                      breakdown.date.to_s.slice(5..6) == "10" %>
                 <tr>
                   <% if breakdown.id %>
                     <td class="ledger-data"><%= breakdown.date %></td>
@@ -388,7 +398,8 @@
             </thead>
             <tbody>
               <% @account.breakdowns.each do |breakdown| %>
-                <% if breakdown.date.to_s.slice(5..6) == "11" %>
+                <% if breakdown.date.to_s.slice(2..3) == "17" &&
+                      breakdown.date.to_s.slice(5..6) == "11" %>
                 <tr>
                   <% if breakdown.id %>
                     <td class="ledger-data"><%= breakdown.date %></td>
@@ -420,7 +431,8 @@
             </thead>
             <tbody>
               <% @account.breakdowns.each do |breakdown| %>
-                <% if breakdown.date.to_s.slice(5..6) == "12" %>
+                <% if breakdown.date.to_s.slice(2..3) == "17" &&
+                      breakdown.date.to_s.slice(5..6) == "12" %>
                 <tr>
                   <% if breakdown.id %>
                     <td class="ledger-data"><%= breakdown.date %></td>
@@ -440,7 +452,402 @@
       </div> <!--accordion div-->
     </div> <!--id="tab2-2017"-->
     <div id="tabs-2018">
-    </div>
+      <div id="accordion-2">
+        <h3>January</h3>
+          <div id="january">
+            <table id="ledger-table">
+              <thead>
+                <tr>
+                  <th style="width:7em">Date</th>
+                  <th style="width:15em">Content</th>
+                  <th>Act.Type</th>
+                  <th>Spd.Type</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @account.breakdowns.each do |breakdown| %>
+                  <% if breakdown.date.to_s.slice(2..3) == "18" &&
+                        breakdown.date.to_s.slice(5..6) == "01" %>
+                  <tr>
+                    <% if breakdown.id %>
+                      <td class="ledger-data"><%= breakdown.date %></td>
+                      <td class="ledger-data"><%= link_to breakdown.content, edit_breakdown_path(breakdown), :class => :links %></td>
+                      <td class="ledger-data"><%= breakdown.activityType %></td>
+                      <td class="ledger-data"><%= breakdown.spendingType %></td>
+                      <td class="ledger-data"><%= breakdown.amount.to_money.format %></td>
+                      <td><%= link_to 'Remove', breakdown, method: :delete, data: { confirm: 'Are you sure?' }, :class => :links %></td>
+                    <% end %>
+                  </tr>
+                  <% end %>
+                <% end %>
+              </tbody>
+            </table>
+          </div> <!--id="january"-->
+
+        <h3>February</h3>
+          <div id="february">
+            <table id="ledger-table">
+              <thead>
+                <tr>
+                  <th style="width:7em">Date</th>
+                  <th style="width:15em">Content</th>
+                  <th>Act.Type</th>
+                  <th>Spd.Type</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @account.breakdowns.each do |breakdown| %>
+                  <% if breakdown.date.to_s.slice(2..3) == "18" &&
+                        breakdown.date.to_s.slice(5..6) == "02" %>
+                  <tr>
+                    <% if breakdown.id %>
+                  <td class="ledger-data"><%= breakdown.date %></td>
+                      <td class="ledger-data"><%= link_to breakdown.content, edit_breakdown_path(breakdown), :class => :links %></td>
+                  <td class="ledger-data"><%= breakdown.activityType %></td>
+                  <td class="ledger-data"><%= breakdown.spendingType %></td>
+                  <td class="ledger-data"><%= breakdown.amount.to_money.format %></td>
+                  <td><%= link_to 'Remove', breakdown, method: :delete, data: { confirm: 'Are you sure?' }, :class => :links %></td>
+                <% end %>
+              </tr>
+              <% end %>
+            <% end %>
+          </tbody>
+        </table>
+      </div> <!--id="february"--> 
+
+      <h3>March</h3>
+        <div id="march">
+          <table id="ledger-table">
+            <thead>
+              <tr>
+                <th style="width:7em">Date</th>
+                <th style="width:15em">Content</th>
+                <th>Act.Type</th>
+                <th>Spd.Type</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @account.breakdowns.each do |breakdown| %>
+                <% if breakdown.date.to_s.slice(2..3) == "18" &&
+                      breakdown.date.to_s.slice(5..6) == "03" %>
+                <tr>
+                  <% if breakdown.id %>
+                    <td class="ledger-data"><%= breakdown.date %></td>
+                    <td class="ledger-data"><%= breakdown.content %></td>
+                    <td class="ledger-data"><%= breakdown.activityType %></td>
+                    <td class="ledger-data"><%= breakdown.spendingType %></td>
+                    <td class="ledger-data"><%= breakdown.amount.to_money.format %></td>
+                    <td><%= link_to 'Edit', edit_breakdown_path(breakdown), :class => :links %></td>
+                    <td><%= link_to 'Remove', breakdown, method: :delete, data: { confirm: 'Are you sure?' }, :class => :links %></td>
+                  <% end %>
+                </tr>
+                <% end %>
+              <% end %>
+            </tbody>
+          </table>
+        </div> <!--id="march"-->
+
+      <h3>April</h3>
+        <div id="april">
+          <table id="ledger-table">
+            <thead>
+              <tr>
+                <th style="width:7em">Date</th>
+                <th style="width:15em">Content</th>
+                <th>Act.Type</th>
+                <th>Spd.Type</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @account.breakdowns.each do |breakdown| %>
+                <% if breakdown.date.to_s.slice(2..3) == "18" &&
+                      breakdown.date.to_s.slice(5..6) == "04" %>
+                <tr>
+                  <% if breakdown.id %>
+                    <td class="ledger-data"><%= breakdown.date %></td>
+                  <td class="ledger-data"><%= breakdown.content %></td>
+                  <td class="ledger-data"><%= breakdown.activityType %></td>
+                  <td class="ledger-data"><%= breakdown.spendingType %></td>
+                  <td class="ledger-data"><%= breakdown.amount.to_money.format %></td>
+                  <td><%= link_to 'Edit', edit_breakdown_path(breakdown), :class => :links %></td>
+                  <td><%= link_to 'Remove', breakdown, method: :delete, data: { confirm: 'Are you sure?' }, :class => :links %></td>
+                <% end %>
+              </tr>
+              <% end %>
+            <% end %>
+            </tbody>
+          </table>
+        </div> <!--id="april"--> 
+
+      <h3>May</h3>
+        <div id="may">
+          <table id="ledger-table">
+            <thead>
+              <tr>
+                <th style="width:7em">Date</th>
+                <th style="width:15em">Content</th>
+                <th>Act.Type</th>
+                <th>Spd.Type</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @account.breakdowns.each do |breakdown| %>
+                <% if breakdown.date.to_s.slice(2..3) == "18" &&
+                      breakdown.date.to_s.slice(5..6) == "05" %>
+                <tr>
+                  <% if breakdown.id %>
+                    <td class="ledger-data"><%= breakdown.date %></td>
+                    <td class="ledger-data"><%= breakdown.content %></td>
+                    <td class="ledger-data"><%= breakdown.activityType %></td>
+                    <td class="ledger-data"><%= breakdown.spendingType %></td>
+                    <td class="ledger-data"><%= breakdown.amount.to_money.format %></td>
+                    <td><%= link_to 'Edit', edit_breakdown_path(breakdown), :class => :links %></td>
+                    <td><%= link_to 'Remove', breakdown, method: :delete, data: { confirm: 'Are you sure?' }, :class => :links %></td>
+                  <% end %>
+                </tr>
+                <% end %>
+              <% end %>
+            </tbody>
+          </table>
+        </div> <!--id="may"--> 
+
+      <h3>June</h3>
+        <div id="june">
+          <table id="ledger-table">
+            <thead>
+              <tr>
+                <th style="width:7em">Date</th>
+                <th style="width:15em">Content</th>
+                <th>Act.Type</th>
+                <th>Spd.Type</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @account.breakdowns.each do |breakdown| %>
+                <% if breakdown.date.to_s.slice(2..3) == "18" &&
+                      breakdown.date.to_s.slice(5..6) == "06" %>
+                <tr>
+                  <% if breakdown.id %>
+                    <td class="ledger-data"><%= breakdown.date %></td>
+                  <td class="ledger-data"><%= breakdown.content %></td>
+                  <td class="ledger-data"><%= breakdown.activityType %></td>
+                  <td class="ledger-data"><%= breakdown.spendingType %></td>
+                  <td class="ledger-data"><%= breakdown.amount.to_money.format %></td>
+                  <td><%= link_to 'Edit', edit_breakdown_path(breakdown), :class => :links %></td>
+                  <td><%= link_to 'Remove', breakdown, method: :delete, data: { confirm: 'Are you sure?' }, :class => :links %></td>
+                <% end %>
+              </tr>
+              <% end %>
+            <% end %>
+            </tbody>
+          </table>
+        </div> <!--id="june"--> 
+
+      <h3>July</h3>
+        <div id="july">
+          <table id="ledger-table">
+            <thead>
+              <tr>
+                <th style="width:7em">Date</th>
+                <th style="width:15em">Content</th>
+                <th>Act.Type</th>
+                <th>Spd.Type</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @account.breakdowns.each do |breakdown| %>
+                <% if breakdown.date.to_s.slice(2..3) == "18" &&
+                      breakdown.date.to_s.slice(5..6) == "07" %>
+                <tr>
+                  <% if breakdown.id %>
+                    <td class="ledger-data"><%= breakdown.date %></td>
+                    <td class="ledger-data"><%= breakdown.content %></td>
+                    <td class="ledger-data"><%= breakdown.activityType %></td>
+                    <td class="ledger-data"><%= breakdown.spendingType %></td>
+                    <td class="ledger-data"><%= breakdown.amount.to_money.format %></td>
+                    <td><%= link_to 'Edit', edit_breakdown_path(breakdown), :class => :links %></td>
+                    <td><%= link_to 'Remove', breakdown, method: :delete, data: { confirm: 'Are you sure?' }, :class => :links %></td>
+                  <% end %>
+                </tr>
+                <% end %>
+              <% end %>
+            </tbody>
+          </table>
+        </div> <!--id="july"-->
+      
+      <h3>August</h3>
+        <div id="august">
+          <table id="ledger-table">
+            <thead>
+              <tr>
+                <th style="width:7em">Date</th>
+                <th style="width:15em">Content</th>
+                <th>Act.Type</th>
+                <th>Spd.Type</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @account.breakdowns.each do |breakdown| %>
+                <% if breakdown.date.to_s.slice(2..3) == "18" &&
+                      breakdown.date.to_s.slice(5..6) == "08" %>
+                <tr>
+                  <% if breakdown.id %>
+                    <td class="ledger-data"><%= breakdown.date %></td>
+                  <td class="ledger-data"><%= breakdown.content %></td>
+                  <td class="ledger-data"><%= breakdown.activityType %></td>
+                  <td class="ledger-data"><%= breakdown.spendingType %></td>
+                  <td class="ledger-data"><%= breakdown.amount.to_money.format %></td>
+                  <td><%= link_to 'Edit', edit_breakdown_path(breakdown), :class => :links %></td>
+                  <td><%= link_to 'Remove', breakdown, method: :delete, data: { confirm: 'Are you sure?' }, :class => :links %></td>
+                  <% end %>
+                </tr>
+                <% end %>
+              <% end %>
+            </tbody>
+          </table>
+        </div> <!--id="august"--> 
+
+      <h3>September</h3>
+        <div id="september">
+          <table id="ledger-table">
+            <thead>
+              <tr>
+                <th style="width:7em">Date</th>
+                <th style="width:15em">Content</th>
+                <th>Act.Type</th>
+                <th>Spd.Type</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @account.breakdowns.each do |breakdown| %>
+                <% if breakdown.date.to_s.slice(2..3) == "18" &&
+                      breakdown.date.to_s.slice(5..6) == "09" %>
+                <tr>
+                  <% if breakdown.id %>
+                    <td class="ledger-data"><%= breakdown.date %></td>
+                    <td class="ledger-data"><%= breakdown.content %></td>
+                    <td class="ledger-data"><%= breakdown.activityType %></td>
+                    <td class="ledger-data"><%= breakdown.spendingType %></td>
+                    <td class="ledger-data"><%= breakdown.amount.to_money.format %></td>
+                    <td><%= link_to 'Edit', edit_breakdown_path(breakdown), :class => :links %></td>
+                    <td><%= link_to 'Remove', breakdown, method: :delete, data: { confirm: 'Are you sure?' }, :class => :links %></td>
+                  <% end %>
+                </tr>
+                <% end %>
+              <% end %>
+            </tbody>
+          </table>
+        </div> <!--id="september"--> 
+
+      <h3>October</h3>
+        <div id="october">
+          <table id="ledger-table">
+            <thead>
+              <tr>
+                <th style="width:7em">Date</th>
+                <th style="width:15em">Content</th>
+                <th>Act.Type</th>
+                <th>Spd.Type</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @account.breakdowns.each do |breakdown| %>
+                <% if breakdown.date.to_s.slice(2..3) == "18" &&
+                      breakdown.date.to_s.slice(5..6) == "10" %>
+                <tr>
+                  <% if breakdown.id %>
+                    <td class="ledger-data"><%= breakdown.date %></td>
+                  <td class="ledger-data"><%= breakdown.content %></td>
+                  <td class="ledger-data"><%= breakdown.activityType %></td>
+                  <td class="ledger-data"><%= breakdown.spendingType %></td>
+                  <td class="ledger-data"><%= breakdown.amount.to_money.format %></td>
+                  <td><%= link_to 'Edit', edit_breakdown_path(breakdown), :class => :links %></td>
+                  <td><%= link_to 'Remove', breakdown, method: :delete, data: { confirm: 'Are you sure?' }, :class => :links %></td>
+                  <% end %>
+                </tr>
+                <% end %>
+              <% end %>
+            </tbody>
+          </table>
+        </div> <!--id="october"--> 
+
+      <h3>Novermber</h3>
+        <div id="november">
+          <table id="ledger-table">
+            <thead>
+              <tr>
+                <th style="width:7em">Date</th>
+                <th style="width:15em">Content</th>
+                <th>Act.Type</th>
+                <th>Spd.Type</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @account.breakdowns.each do |breakdown| %>
+                <% if breakdown.date.to_s.slice(2..3) == "18" &&
+                      breakdown.date.to_s.slice(5..6) == "11" %>
+                <tr>
+                  <% if breakdown.id %>
+                    <td class="ledger-data"><%= breakdown.date %></td>
+                    <td class="ledger-data"><%= breakdown.content %></td>
+                    <td class="ledger-data"><%= breakdown.activityType %></td>
+                    <td class="ledger-data"><%= breakdown.spendingType %></td>
+                    <td class="ledger-data"><%= breakdown.amount.to_money.format %></td>
+                    <td><%= link_to 'Edit', edit_breakdown_path(breakdown), :class => :links %></td>
+                    <td><%= link_to 'Remove', breakdown, method: :delete, data: { confirm: 'Are you sure?' }, :class => :links %></td>
+                  <% end %>
+                </tr>
+                <% end %>
+              <% end %>
+            </tbody>
+          </table>
+        </div> <!--id="november"-->
+
+      <h3>December</h3>
+        <div id="december">
+          <table id="ledger-table">
+            <thead>
+              <tr>
+                <th style="width:7em">Date</th>
+                <th style="width:15em">Content</th>
+                <th>Act.Type</th>
+                <th>Spd.Type</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @account.breakdowns.each do |breakdown| %>
+                <% if breakdown.date.to_s.slice(2..3) == "18" &&
+                      breakdown.date.to_s.slice(5..6) == "12" %>
+                <tr>
+                  <% if breakdown.id %>
+                    <td class="ledger-data"><%= breakdown.date %></td>
+                  <td class="ledger-data"><%= breakdown.content %></td>
+                  <td class="ledger-data"><%= breakdown.activityType %></td>
+                  <td class="ledger-data"><%= breakdown.spendingType %></td>
+                  <td class="ledger-data"><%= breakdown.amount.to_money.format %></td>
+                  <td><%= link_to 'Edit', edit_breakdown_path(breakdown), :class => :links %></td>
+                  <td><%= link_to 'Remove', breakdown, method: :delete, data: { confirm: 'Are you sure?' }, :class => :links %></td>
+                  <% end %>
+                </tr>
+                <% end %>
+              <% end %>
+            </tbody>
+          </table>
+        </div> <!--id="december"-->
+      </div> <!--accordion-2 div-->
+    </div> <!--id="tabs-2018"-->
   </div> <!--id="tabs"-->
   <br/>
 </div> <!--class="accounts"-->

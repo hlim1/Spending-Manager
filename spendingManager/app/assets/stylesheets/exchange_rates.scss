@@ -1,16 +1,49 @@
 // Place all the styles related to the exchange_rates controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#convertTitle {
+  text-align: left;
+  padding-left: 10px;
+}
+#amountInput {
+  left: 0;
+}
+#amount {
+  height: 32px;
+  width: 78%;
+  font-size: 20px;
+}
 #convert {
   width: 80%;
   height: 35px;
   color: blue;
-  font-weight: bold;
   font-size: 20px;
+  font-family: 'Libre Barcode 39 Text', cursive;
+  border-radius: 8px;
+}
+#to {
+  height: 2.5em;
+  width: 45%;
+}
+#convertBtn {
+  width: 40%;
+  height: 2em;
+  color: blue;
+  font-size: 20px;
+  font-family: 'Libre Barcode 39 Text', cursive;
+  border-radius: 8px;
+}
+#convertedAmount {
+  width: 30%;
 }
 .convertedBalance {
   width: 30%;
 }
 .balances {
   font-size: 20px;
+}
+.class {
+  height: 2em;
+  width: 100%;
 }

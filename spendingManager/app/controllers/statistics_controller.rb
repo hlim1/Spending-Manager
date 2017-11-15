@@ -7,6 +7,7 @@ class StatisticsController < ApplicationController
   # GET /statistics.json
   def index
     @statistics = Statistic.all
+    @accounts = Account.all
     dailyTotals = DailyTotal.all
     monthlyTotals = MonthlyTotal.all
 
@@ -48,7 +49,6 @@ class StatisticsController < ApplicationController
         @mTotals.push(["December",mt.total.to_f])
       end
     }
-    # gon.mTotals = mTotals
 
     # Extracting only expenses types in order to remove "None" type, which considers to be a Credit
     @spendingTypes = {"Food" => 0, "Education" => 0, "Transportation" => 0, "Rent/Maintenance" => 0, "Travle" => 0, "Luxuries" => 0, "Other" => 0}
@@ -70,13 +70,11 @@ class StatisticsController < ApplicationController
         @spendingTypes["Other"] += 1
       end
     }
-=begin
-    dataForCharts = Array.new
-    spendingTypes.each { |key, value|
-      dataForCharts.push([key, value])
+
+    @balanceSummary = Array.new
+    @accounts.each { |account|
+      @balanceSummary.push ([account.name,account.balance.to_f])
     }
-    gon.spendingTypes = dataForCharts;
-=end
   end
 
   # GET /statistics/1

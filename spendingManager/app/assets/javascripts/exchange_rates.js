@@ -17,8 +17,18 @@ function addCommas(nStr)
 function convert() {
   var balance = document.getElementsByClassName("balances"); 
   var currency = document.getElementsByClassName("currencies");
+
   for (i = 0; i < currency.length; i++) {
     var rate = gon.exchange_rate[currency[i].value];
     document.getElementsByClassName("convertedBalance")[i].innerHTML = currency[i].value + " " + addCommas((balance[i].innerHTML * rate).toFixed(3));
   }
+}
+
+function converted() {
+  var amount = document.getElementById("amount").value;
+  var to = document.getElementById("to").value;
+
+  var toRate = gon.exchange_rate[to];
+
+  document.getElementById("convertedAmount").innerHTML = to + " " + addCommas((amount * toRate).toFixed(3));
 }

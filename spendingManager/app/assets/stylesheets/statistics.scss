@@ -1,3 +1,27 @@
 // Place all the styles related to the statistics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#piechart {
+  margin-bottom: 0;
+}
+#chartTable {
+  text-align: left;
+}
+#monthly-sum {
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 35px;
+  text-align: center;
+  width: 98%;
+  height: 40px;
+  background-color: rgb(0,127,255);
+}
+.charts {
+  padding: 5px;
+  background-color: #f2efed;
+
+}
+.charts > td {
+  color: white;
+}

@@ -77,6 +77,31 @@
   <p id="updated-at">Updated at: <%= time.to_formatted_s(:db) %></p>
   <br/>
 
+  <!--The default value is USD. Users can convert the amount they wish to convert
+      to the currency they wish to convert-->
+  <table class="table-layout">
+    <thead>
+      <tr>
+        <th id="convertTitle">More currencies</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+    <tbody>
+        <td id="amountInput">USD ($) <input type="text" id="amount" placeholder="ex) 100.00"></td>
+        <td>
+            <select id="to">
+              <% @currencies.each do |currency| %>
+                <option><%= currency %></option>
+              <% end %>
+            </select>
+            <button id="convertBtn", onclick="converted()">Convert</button>
+        </td>
+        <td id="convertedAmount"><span style="font-size: 14px">"Click Convert"</span></td>
+    </tbody>
+  </table>
+  <p id="updated-at">Updated at: <%= time.to_formatted_s(:db) %></p>
+
+  <br/>
   <!-- Convert balance of accounts into selected currency,
        then display them in each row of a table -->
   <table class="table-layout">
