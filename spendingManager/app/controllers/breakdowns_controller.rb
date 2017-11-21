@@ -30,6 +30,8 @@ class BreakdownsController < ApplicationController
     @breakdown = Breakdown.new(breakdown_params)
     @breakdown.account_id = params[:account_id]
 
+
+
     if @breakdown.activityType == "DEBIT"
       @breakdown.debit = @breakdown.amount
     else
