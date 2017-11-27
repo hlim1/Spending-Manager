@@ -33,45 +33,71 @@
         <h3><%= account.name + " - " + account.accountNumber %></h3>
           <div>
             <table id="ledger-table">
-                <thead>
-                  <tr>
-                    <th style="width:7em">Date</th>
-                    <th style="width:15em">Content</th>
-                    <th>Act.Type</th>
-                    <th>Spd.Type</th>
-                    <th>Amount</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <% account.breakdowns.each do |breakdown| %>
-                    <% if breakdown.date.to_s.slice(5..6) == Time.current.to_s.slice(5..6) %>
-                    <tr>
-                      <% if breakdown.id %>
-                        <td class="ledger-data"><%= breakdown.date %></td>
-                        <td class="ledger-data"><%= breakdown.content %></td>
-                        <td class="ledger-data"><%= breakdown.activityType %></td>
-                        <td class="ledger-data"><%= breakdown.spendingType %></td>
-                        <td class="ledger-data"><%= breakdown.amount.to_money.format %></td>
-                      <% end %>
-                    </tr>
+              <thead>
+                <tr>
+                  <th style="width:7em">Date</th>
+                  <th style="width:15em">Content</th>
+                  <th>Act.Type</th>
+                  <th>Spd.Type</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% today = Time.current.to_s %>
+                <% @recentActivities = Array.new %>
+                <% account.breakdowns.each do |breakdown| %>
+                  <% if today.slice(5..6).to_s == breakdown.date.to_s.slice(5..6) %>
+                    <% if today.slice(8..9).to_i-4 == breakdown.date.to_s.slice(8..9).to_i ||
+                          today.slice(8..9).to_i-3 == breakdown.date.to_s.slice(8..9).to_i ||
+                          today.slice(8..9).to_i-2 == breakdown.date.to_s.slice(8..9).to_i ||
+                          today.slice(8..9).to_i-1 == breakdown.date.to_s.slice(8..9).to_i ||
+                          today.slice(8..9).to_i == breakdown.date.to_s.slice(8..9).to_i %>
+                        <% @recentActivities.push(breakdown) %>
                     <% end %>
                   <% end %>
-                </tbody>
-              </table>
+                <% end %>
+                <% @recentActivities.each do |recent| %>
+                  <tr>
+                    <td class="ledger-data"><%= recent.date %></td>
+                    <td class="ledger-data"><%= recent.content %></td>
+                    <td class="ledger-data"><%= recent.activityType %></td>
+                    <td class="ledger-data"><%= recent.spendingType %></td>
+                    <td class="ledger-data"><%= recent.amount.to_money.format %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
           </div>
       <% end %> <!--@accounts.each-->
     </div> <!--id="accordion"-->
   </div> <!--id="account-summary"-->
 
-  <br/>
-
   <div class="page-name"> 
     <h1>Statistic</h1>
   </div>
-
+  <br/>
   <div id="statistic-summary">
-    <div id="barchart_for_current_balances" style="width: 520px; height: 400px; float: right;"></div>
-    <div id="linechart_for_monthly_spending" style="width: 520px; height: 400px;"></div>
+    <table class="table-layout">
+      <thead>
+        <tr>
+          <th>Monthly Spending (Debit)</th>
+          <th>Current Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="charts">
+          <td>
+            <%= line_chart @mTotals.each { |mtotal| { data: mtotal[0][1] } }, width: "550px",
+                height: "350px", library: {backgroundColor: "#f2efed"}, 
+                xtitle: "Month", ytitle: "Total ($)" %>
+          </td>
+          <td>
+            <%= column_chart @balanceSummary.each {|balance| { data: balance[0][1] } },
+                width: "450px", height: "350px", library: {backgroundColor: "#f2efed"}, 
+                xtitle: "Bank", ytitle: "Current Balance ($)" %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-    <br/>
 </div>

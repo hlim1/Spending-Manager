@@ -6,3 +6,12 @@ execute <<-SQL
     WHERE id = Old.account_id;
   END;
 SQL
+
+execute <<-SQL
+  CREATE TRIGGER update_income AFTER CREATE ON breakdowns
+  BEGIN
+    UPDATE monthly_totals 
+    SET income = income + New.credit
+    WHERE id = New.account_id;
+  END;
+SQL

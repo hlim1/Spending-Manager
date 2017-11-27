@@ -31,9 +31,16 @@
   <br/>
 
   <div>
-    <h3 id="monthly-sum">Monthly Sum</h3>
+    <h3 id="monthly-sum">Monthly Spending (Debit)</h3>
     <%= line_chart @mTotals.each { |mtotal| { data: mtotal[0][1] } }, width: "98%", height: "400px",
         library: {backgroundColor: "#f2efed"}, xtitle: "Month", ytitle: "Total ($)" %>
+  </div>
+  <br/>
+  <div>
+    <h3 id="monthly-sum">Monthly Income (Credit)</h3>
+    <%= line_chart @mIncomes.each { |mincome| { data: mincome[0][1] } }, width: "98%", 
+        height: "400px", library: {backgroundColor: "#f2efed"}, xtitle: "Month", 
+        ytitle: "Total ($)" %>
   </div>
   <br/>
   <div id="piechart">
@@ -41,17 +48,18 @@
       <thead>
         <tr>
           <th><h3>Spending Categories</h3></th>
-          <th><h3>Current Balance</h3></th>
+          <th><h3>Spending Habit by Account</h3></th>
         </tr>
       </thead>
       <tbody>
         <tr class="charts">
           <td><%= pie_chart @spendingTypes, width: "500px", height: "400px", 
-                  library: {backgroundColor: "#f2efed"} %></td>
+                  library: {backgroundColor: "#f2efed"} %>
+          </td>
           <td>
-              <%= column_chart @balanceSummary.each {|balance| { data: balance[0][1] } },
-                  width: "500px", height: "400px", library: {backgroundColor: "#f2efed"}, 
-                  xtitle: "Bank", ytitle: "Current Balance ($)" %>
+            <%= column_chart @acctHabitforChart.each {|ash| { data: ash } },
+                width: "500px", height: "400px", library: {backgroundColor: "#f2efed"}, 
+                xtitle: "Bank", ytitle: "Yearly Spent ($)" %>
           </td>
         </tr>
       </tbody>

@@ -45,6 +45,21 @@ table#ledger-table {
   font-size: 25px;
   font-weight: bold;
 }
+#quote-area {
+  margin-top: 8%;;
+  padding: 25px 10px;
+  text-align: center;
+  background-color: rgba(0,51,102,0.7);
+  border-radius: 20px 20px 20px 20px;
+  height: 20em;
+  width: 96%;
+}
+#quotes {
+  font-family: 'Merienda', cursive; 
+  font-size: 3em;
+  letter-spacing: 5px;
+  line-height: 50px;
+}
 //----------------Class-------------------------------------------
 
 .form-body {

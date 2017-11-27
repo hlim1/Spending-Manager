@@ -54,4 +54,9 @@
       <% end %>
     </tbody>
   </table>
+  
+  <div id="quote-area">
+    <h1>~ Quote of the Day ~</h1><br/>
+    <h1 id="quotes"><%= @quotes[@random.rand(30)].quote %></h1>
+  </div>
 </div>

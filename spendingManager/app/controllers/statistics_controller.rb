@@ -7,9 +7,11 @@ class StatisticsController < ApplicationController
   # GET /statistics.json
   def index
     @statistics = Statistic.all
-    @accounts = Account.all
+
     dailyTotals = DailyTotal.all
     monthlyTotals = MonthlyTotal.all
+    monthlyIncomes = MonthlyIncome.all
+    breakdowns = Breakdown.all
 
     # Calculating the monthly total by adding daily total values
     monthlyTotals.each { |mt|
@@ -19,7 +21,7 @@ class StatisticsController < ApplicationController
         end
       } # end of inner dailyTotal loop
     } # end of monthlyTotal loop
-
+    
     @mTotals = Array.new
     monthlyTotals.each { |mt|
       case mt.month
@@ -50,9 +52,48 @@ class StatisticsController < ApplicationController
       end
     }
 
+    monthlyIncomes.each { |mi|
+      breakdowns.each { |br|
+        if br.activityType == "CREDIT"
+          if br.date.year == mi.year && br.date.month == mi.month
+            mi.income += br.credit
+          end
+        end
+      }
+    } 
+
+    @mIncomes = Array.new
+    monthlyIncomes.each { |mi|
+      case mi.month
+      when 1
+        @mIncomes.push(["January",mi.income.to_f])
+      when 2
+        @mIncomes.push(["February",mi.income.to_f])
+      when 3
+        @mIncomes.push(["March",mi.income.to_f])
+      when 4
+        @mIncomes.push(["April",mi.income.to_f])
+      when 5
+        @mIncomes.push(["May",mi.income.to_f])
+      when 6
+        @mIncomes.push(["June",mi.income.to_f])
+      when 7
+        @mIncomes.push(["July",mi.income.to_f])
+      when 8
+        @mIncomes.push(["August",mi.income.to_f])
+      when 9
+        @mIncomes.push(["September",mi.income.to_f])
+      when 10
+        @mIncomes.push(["October",mi.income.to_f])
+      when 11
+        @mIncomes.push(["November",mi.income.to_f])
+      when 12
+        @mIncomes.push(["December",mi.income.to_f])
+      end
+    }
+
     # Extracting only expenses types in order to remove "None" type, which considers to be a Credit
-    @spendingTypes = {"Food" => 0, "Education" => 0, "Transportation" => 0, "Rent/Maintenance" => 0, "Travle" => 0, "Luxuries" => 0, "Other" => 0}
-    breakdowns = Breakdown.all
+    @spendingTypes = {"Food" => 0, "Education" => 0, "Transportation" => 0, "Rent/Maintenance" => 0, "Travel" => 0, "Luxuries" => 0, "Other" => 0}
     breakdowns.each { |breakdown|
       if (breakdown.spendingType == "Food")
         @spendingTypes["Food"] += 1
@@ -62,8 +103,8 @@ class StatisticsController < ApplicationController
         @spendingTypes["Transportation"] += 1
       elsif (breakdown.spendingType == "Rent/maintenance")
         @spendingTypes["Rent/maintenance"] += 1
-      elsif (breakdown.spendingType == "Travle")
-        @spendingTypes["Travle"] += 1
+      elsif (breakdown.spendingType == "Travel")
+        @spendingTypes["Travel"] += 1
       elsif (breakdown.spendingType == "Luxuries")
         @spendingTypes["Luxuries"] += 1
       elsif (breakdown.spendingType == "Travle")
@@ -71,10 +112,22 @@ class StatisticsController < ApplicationController
       end
     }
 
-    @balanceSummary = Array.new
+    @accounts = Account.all
+    @acctSpendingHabit = Array.new
     @accounts.each { |account|
-      @balanceSummary.push ([account.name,account.balance.to_f])
+      @acctSpendingHabit.push ([account.id, account.name, 0.00])
     }
+
+    @acctHabitforChart = Array.new
+    @acctSpendingHabit.each { |ash|
+      breakdowns.each { |br|
+        if ash[0] == br.account_id
+          ash[2] += br.debit.to_f
+        end
+      }
+      @acctHabitforChart.push([ash[1],ash[2]])
+    }
+    
   end
 
   # GET /statistics/1

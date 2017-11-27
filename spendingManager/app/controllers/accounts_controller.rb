@@ -6,6 +6,8 @@ class AccountsController < ApplicationController
   # GET /accounts.json
   def index
     @accounts = Account.all
+    @quotes = DailyQuote.all
+    @random = Random.new
   end
 
   # GET /accounts/1
@@ -14,7 +16,7 @@ class AccountsController < ApplicationController
     @breakdown = @account.breakdowns.new
     @totals = DailyTotal.all
     @activityTypes = ["DEBIT","CREDIT"]
-    @spendingTypes = ["Food", "Education", "Transportation", "Rent/Maintenance", "Travle", "Luxuries", "Other"]
+    @spendingTypes = ["Food", "Education", "Transportation", "Rent/Maintenance", "Travel", "Luxuries", "Other"]
   end
 
   # GET /accounts/new

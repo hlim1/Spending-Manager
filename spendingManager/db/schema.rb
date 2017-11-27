@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171115232614) do
+ActiveRecord::Schema.define(version: 20171123233150) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "name"
@@ -36,6 +36,12 @@ ActiveRecord::Schema.define(version: 20171115232614) do
     t.index ["account_id"], name: "index_breakdowns_on_account_id"
   end
 
+  create_table "daily_quotes", force: :cascade do |t|
+    t.string "quote"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "daily_totals", force: :cascade do |t|
     t.date "date"
     t.decimal "total"
@@ -51,6 +57,14 @@ ActiveRecord::Schema.define(version: 20171115232614) do
   end
 
   create_table "mains", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "monthly_incomes", force: :cascade do |t|
+    t.integer "year"
+    t.integer "month"
+    t.decimal "income"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
