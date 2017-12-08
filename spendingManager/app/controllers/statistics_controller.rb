@@ -13,7 +13,7 @@ class StatisticsController < ApplicationController
     monthlyIncomes = MonthlyIncome.all
     breakdowns = Breakdown.all
 
-    # Calculating the monthly total by adding daily total values
+    # Calculating the monthly spending total by sum up debit from breakdowns table
     monthlyTotals.each { |mt|
       breakdowns.each { |br|
         if br.activityType == "DEBIT"
@@ -54,6 +54,7 @@ class StatisticsController < ApplicationController
       end
     }
 
+    # Calculating the monthly income total by sum up credit from breakdowns table
     monthlyIncomes.each { |mi|
       breakdowns.each { |br|
         if br.activityType == "CREDIT"
@@ -103,7 +104,7 @@ class StatisticsController < ApplicationController
         @spendingTypes["Education"] += 1
       elsif (breakdown.spendingType == "Transportation")
         @spendingTypes["Transportation"] += 1
-      elsif (breakdown.spendingType == "Rent/maintenance")
+      elsif (breakdown.spendingType == "Rent/Maintenance")
         @spendingTypes["Rent/Maintenance"] += 1
       elsif (breakdown.spendingType == "Travel")
         @spendingTypes["Travel"] += 1

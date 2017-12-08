@@ -58,12 +58,12 @@
       </thead>
       <tbody>
         <tr class="charts">
-          <td><%= pie_chart @spendingTypes, width: "500px", height: "400px", 
+          <td><%= pie_chart @spendingTypes, width: "650px", height: "400px", 
                   library: {backgroundColor: "#f2efed"} %>
           </td>
           <td>
             <%= column_chart @acctHabitforChart.each {|ash| { data: ash } },
-                width: "500px", height: "400px", library: {backgroundColor: "#f2efed"}, 
+                width: "650px", height: "400px", library: {backgroundColor: "#f2efed"}, 
                 xtitle: "Bank", ytitle: "Yearly Spent ($)" %>
           </td>
         </tr>

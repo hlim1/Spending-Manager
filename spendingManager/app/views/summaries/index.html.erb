@@ -93,13 +93,13 @@
       <tbody>
         <tr class="charts">
           <td>
-            <%= line_chart @mTotals.each { |mtotal| { data: mtotal[0][1] } }, width: "550px",
+            <%= line_chart @mTotals.each { |mtotal| { data: mtotal[0][1] } }, width: "660px",
                 height: "350px", library: {backgroundColor: "#f2efed"}, 
                 xtitle: "Month", ytitle: "Total ($)" %>
           </td>
           <td>
             <%= column_chart @balanceSummary.each {|balance| { data: balance[0][1] } },
-                width: "450px", height: "350px", library: {backgroundColor: "#f2efed"}, 
+                width: "660px", height: "350px", library: {backgroundColor: "#f2efed"}, 
                 xtitle: "Bank", ytitle: "Current Balance ($)" %>
           </td>
         </tr>

@@ -33,7 +33,6 @@ class AccountsController < ApplicationController
   def create
     @account = Account.new(account_params)
     @account.user = current_user;
-    @account.breakdowns.sort_by!(&:date)
 
     respond_to do |format|
       if @account.save
