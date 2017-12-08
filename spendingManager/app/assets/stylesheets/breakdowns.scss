@@ -5,16 +5,23 @@
 #breakdown-input-table {
   text-align: left;
 }
-
 #ledger-add {
   padding-left: 0.5em;
   padding-right: 0.5em;
+  width: 100%;
+  font-size: 20px;
 }
-
 #breakdown_amount {
   width: 4.5em;
 }
-
+#edit-breakdown {
+  position: absolute;
+  left: 30%; 
+  width: 70%;
+}
+#edit-content {
+  margin-bottom: 20px; 
+}
 .breakdown-data {
   text-align: left;
   padding: 0;

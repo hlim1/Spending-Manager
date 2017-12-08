@@ -1,25 +1,30 @@
 <!--  app/views/exchange_rates/index.html.erb -->
 
 <div id="side-menu">
-  <div>
+  <div class="menu">
     <%= link_to "My Profile", edit_user_registration_path, :class => :links %><br />
   </div>
-  <div>
+  <div class="menu">
     <%= link_to "Summary", summaries_path, :class => :links %><br />
   </div>
-  <div>
+  <div class="menu">
     <%= link_to "Accounts Detail", accounts_path, :class => :links %><br />
   </div>
-  <div>
+  <div class="menu">
     <%= link_to "Exchange Rates", exchange_rates_path, :class => :links %><br />
   </div>
-  <div>
+  <div class="menu">
     <%= link_to "Statistics", statistics_path, :class => :links %>
   </div>
   <br />
   <br />
-  <div>
+  <div class="menu">
     <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => :links %>
+  </div>
+  <div id="dev-info">
+    <p>Computer Information Systems</p>
+    <p>Senior Project</p>
+    <p>Terrence Lim</p>
   </div>
 </div>
 

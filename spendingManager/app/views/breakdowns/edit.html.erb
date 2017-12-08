@@ -1,5 +1,37 @@
-<h1>Editing Breakdown</h1>
+<div id="side-menu">
+  <div class="menu">
+    <%= link_to "My Profile", edit_user_registration_path, :class => :links %><br />
+  </div>
+  <div class="menu">
+    <%= link_to "Summary", summaries_path, :class => :links %><br />
+  </div>
+  <div class="menu">
+    <%= link_to "Accounts Detail", accounts_path, :class => :links %><br />
+  </div>
+  <div class="menu">
+    <%= link_to "Exchange Rates", exchange_rates_path, :class => :links %><br />
+  </div>
+  <div class="menu">
+    <%= link_to "Statistics", statistics_path, :class => :links %>
+  </div>
+  <br />
+  <br />
+  <div class="menu">
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => :links %>
+  </div>
+  <div id="dev-info">
+    <p>Computer Information Systems</p>
+    <p>Senior Project</p>
+    <p>Terrence Lim</p>
+  </div>
+</div>
 
-<%= render 'form', breakdown: @breakdown %>
 
-<%= link_to 'Back', @breakdown.account %>
+
+<div id='edit-breakdown'>
+  <div id="edit-content">
+    <h1>Edit Content</h1>
+  </div>
+
+  <%= render 'form', breakdown: @breakdown %>
+</div>

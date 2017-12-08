@@ -1,0 +1,21 @@
+                  <% account.breakdowns.each do |breakdown| %>
+                    <% today = Time.current.to_s %>
+                    <% brDate = breakdown.date.to_s %>
+                    <% if brDate.slice(5..6) == today.slice(5..6) %>
+                    <tr>
+                      <% if breakdown.id %>
+                        <% if brDate.slice(8..9).to_i == today.slice(8..9).to_i || 
+                              brDate.slice(8..9).to_i-1 == today.slice(8..9).to_i-1 ||
+                              brDate.slice(8..9).to_i-2 == today.slice(8..9).to_i-2 ||
+                              brDate.slice(8..9).to_i-3 == today.slice(8..9).to_i-3 ||
+                              brDate.slice(8..9).to_i-4 == today.slice(8..9).to_i-4 %>
+                          <td class="ledger-data"><%= breakdown.date %></td>
+                          <td class="ledger-data"><%= breakdown.content %></td>
+                          <td class="ledger-data"><%= breakdown.activityType %></td>
+                          <td class="ledger-data"><%= breakdown.spendingType %></td>
+                          <td class="ledger-data"><%= breakdown.amount.to_money.format %></td>
+                        <% end %>
+                      <% end %>
+                    </tr>
+                    <% end %>
+                  <% end %>

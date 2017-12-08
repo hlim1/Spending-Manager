@@ -25,7 +25,7 @@ h1#account-name {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-table#ledger-table {
+table.ledger-table {
   text-align: left;
 }
 #tabs > ul > li > a {
@@ -79,12 +79,12 @@ table#ledger-table {
 .ledger-data {
   text-align: left;
 }
-.ledger-data > a {
+.ledger-table > tbody > tr > td > a {
   &:hover {
     color: rgb(0,127,255);
   }
   &:visited {
-    color: rgb(0,127,255);
+    color: black;
   }
 }
 .table-layout {
@@ -110,4 +110,3 @@ table#ledger-table {
   padding-top: 15px;
   padding-bottom: 15px;
 }
-

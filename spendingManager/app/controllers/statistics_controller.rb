@@ -15,9 +15,11 @@ class StatisticsController < ApplicationController
 
     # Calculating the monthly total by adding daily total values
     monthlyTotals.each { |mt|
-      dailyTotals.each { |dt|
-        if dt.date.year == mt.year && dt.date.month == mt.month
-          mt.total += dt.total
+      breakdowns.each { |br|
+        if br.activityType == "DEBIT"
+          if br.date.year == mt.year && br.date.month == mt.month
+            mt.total += br.debit
+          end
         end
       } # end of inner dailyTotal loop
     } # end of monthlyTotal loop
@@ -102,7 +104,7 @@ class StatisticsController < ApplicationController
       elsif (breakdown.spendingType == "Transportation")
         @spendingTypes["Transportation"] += 1
       elsif (breakdown.spendingType == "Rent/maintenance")
-        @spendingTypes["Rent/maintenance"] += 1
+        @spendingTypes["Rent/Maintenance"] += 1
       elsif (breakdown.spendingType == "Travel")
         @spendingTypes["Travel"] += 1
       elsif (breakdown.spendingType == "Luxuries")

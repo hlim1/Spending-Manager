@@ -21,7 +21,7 @@
 }
 body {
   background-color: #333333;
-  background-image: url(background.jpg);
+  background-image: url(background-city.jpg);
   background-size: 100%;
   background-repeat: repeat-y;
   overflow: hide;
@@ -60,10 +60,14 @@ td {
 #side-menu > div {
   padding-left: 30px;
 }
-#side-menu > div:hover {
+#side-menu > .menu:hover {
   font-size: 30px;
   font-weight: bold;
   background-color: #333333;
+}
+#dev-info {
+  position: absolute;
+  bottom: 100px;
 }
 #account-summary {
   margin-top: 20px;;
@@ -97,8 +101,8 @@ td {
 /*---Application wide class---*/
 .accounts {
   position: absolute;
-  left: 30%;
-  width: 70%;
+  left: 27%;
+  width: 73%;
   margin-bottom: 25px;
 }
 .application-name {
